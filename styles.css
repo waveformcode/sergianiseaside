@@ -1,0 +1,465 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+
+/*==== NAV ====*/
+nav {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  align-content: center;
+  background-color: rgb(246, 242, 236);
+  z-index: 3;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+nav li {
+  list-style-type: none;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(0.8rem, 1vw + 0.5rem, 1rem);
+  font-weight: 600;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+/*==== HERO ====*/
+.hero {
+  display: flex;
+  max-width: 100%;
+  max-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.hero img {
+  max-width: 100%;
+  width: 1800px;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.black-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.215);
+  z-index: 1;
+}
+
+/*==== HERO TYPOGRAPHY ====*/
+.typography {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.typography h1 {
+  font-size: clamp(1rem, 5vw + 0.5rem, 5rem);
+  color: white;
+  font-weight: 400;
+  font-family: "Bellefair", serif;
+}
+
+.typography p {
+  font-size: clamp(1rem, 1vw + 0.5rem, 2rem);
+  color: white;
+}
+
+button {
+  background-color: rgb(246, 242, 236);
+  padding: 10px 15px;
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  margin-top: 40px;
+  font-family: "Geist", sans-serif;
+  font-weight: 600;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/*==== INTRO ====*/
+.intro {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-bottom: 80px;
+  background-color: #032f30;
+}
+
+.intro h2 {
+  font-weight: 200;
+  font-family: "Bellefair", serif;
+  color: white;
+  font-size: clamp(1rem, 3vw + 0.5rem, 2rem);
+}
+
+.intro p {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-family: "Bellefair", serif;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  color: white;
+}
+
+/*==== DISHES SECTION ====*/
+.dishes {
+  padding: 70px 70px;
+  background-color: rgb(246, 242, 236);
+}
+
+.dishes-container {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-areas: "meat fish";
+  grid-template-columns: 640px 640px;
+  gap: 50px;
+}
+
+.meat {
+  grid-area: meat;
+  margin-top: 100px;
+}
+
+.fish {
+  grid-area: fish;
+}
+
+.meat img {
+  width: 100%;
+  max-height: 640px;
+  object-fit: cover;
+  box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
+}
+
+.meat p {
+  max-width: 600px;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  margin-top: 100px;
+}
+
+.fish img {
+  width: 100%;
+  max-width: 640px;
+  max-height: 640px;
+  object-fit: cover;
+  box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
+}
+
+.fish-p {
+  font-size: 2.3rem;
+  margin-bottom: 80px;
+  max-width: 640px;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  font-family: "Bellefair", serif !important;
+}
+
+.dishes-menu {
+  text-align: center;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  margin-bottom: 80px;
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+  position: relative;
+}
+
+.dishes-menu::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  width: 17.5%;
+  height: 2px;
+  background: black;
+}
+
+/*==== WINES SECTION ====*/
+.wine-containe {
+  padding: 70px 70px;
+  background-color: rgb(246, 242, 236);
+}
+
+.wines {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-areas: "wine wine2";
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.wine {
+  grid-area: wine;
+}
+
+.wine2 {
+  grid-area: wine2;
+}
+
+.wine img {
+  width: 100%;
+  max-width: 540px;
+  height: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
+}
+
+.wine p {
+  max-width: 540px;
+  font-family: "Bellefair", serif;
+  font-size: clamp(1rem, 3vw + 0.5rem, 2.3rem);
+  margin-bottom: 100px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.wine2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.wine2 img {
+  width: 100%;
+  max-width: 540px;
+  height: 100%;
+  max-height: 440px;
+  object-fit: cover;
+  box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
+}
+
+.wine2 p {
+  width: 100%;
+  max-width: 540px;
+  padding: 30px;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  margin-bottom: 80px;
+  font-weight: 400;
+  letter-spacing: 0.1rem !important;
+  margin-top: 60px;
+}
+
+.wine2 a {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+
+.wine2 a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 120px;
+  width: 20%;
+  height: 2px;
+  background: black;
+}
+
+/*==== SEAFRONT ====*/
+.sea {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.seafront img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.sea h2 {
+  font-size: clamp(1rem, 2vw, 3rem);
+  position: absolute;
+  color: white;
+}
+
+.sea p {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  max-width: 800px;
+  position: absolute;
+  color: white;
+  top: 60%;
+  font-weight: 600;
+  text-align: center;
+}
+
+/*==== FOOTER ====*/
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px 80px 40px;
+  background-color: #032f30;
+  color: white;
+  gap: 250px;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  height: 150;
+}
+
+/*==== FOOTER CONTACTS ====*/
+.contacts {
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  line-height: 2 !important;
+}
+
+.contacts h3 {
+  font-family: "Geist", sans-serif;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.contacts a {
+  text-decoration: none;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #ffffff;
+}
+
+.contacts ul {
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.book-now-footer {
+  font-size: clamp(0.8rem);
+}
+
+/*==== FOOTER SOCIAL MEDIA ====*/
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.social-media a {
+  text-decoration: none;
+}
+
+.social-media svg {
+  display: inline-block;
+}
+
+.ig {
+  color: white;
+}
+
+/*==== FOOTER SECTION 2 ====*/
+
+.address {
+  margin-top: 100px;
+}
+
+.opening-hours h3 {
+  font-family: "Geist", sans-serif;
+  letter-spacing: 0.2rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.opening-hours p {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.address h3 {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.address-p {
+  font-family: "Geist", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.address-seafront {
+  font-family: "Geist", sans-serif;
+  font-size: 12px;
+
+  font-size: clamp(0.6rem, 2vw, 0.75rem);
+}
+
+/*==== FOOTER MAP ====*/
+iframe {
+  max-width: 800px;
+}
+
+/*==== MEDIA QUIRES ====*/
+@media (max-width: 768px) {
+  .hero img {
+    width: auto;
+    height: 700px;
+    object-fit: cover;
+  }
+
+  .dishes-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wines {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sea {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*==== FOOTER MOBILE ====*/
+  footer {
+    text-align: center;
+    gap: 50px;
+  }
+
+  .address {
+    margin-top: 40px;
+  }
+}
