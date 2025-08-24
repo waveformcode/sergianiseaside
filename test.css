@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+
+.dishes {
+  width: 100%;
+  height: auto;
+}
+
+.dishes-container {
+  display: grid;
+  width: 1000px;
+  grid-template-columns: 500px 500px;
+  grid-template-areas:
+    "meat-img mediterranean-heading"
+    "paragraph dishes-menu"
+    ". fish-img";
+  gap: 80px;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.meat-img {
+  width: 100%;
+  grid-area: meat-img;
+}
+
+.mediterranean-heading {
+  grid-area: mediterranean-heading;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.paragraph {
+  grid-area: paragraph;
+}
+
+.dishes-menu {
+  grid-area: dishes-menu;
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 60px;
+}
+
+.fish-img {
+  grid-area: fish-img;
+  width: 100%;
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 150px;
+}
+
+.meat,
+.fish {
+  display: contents;
+}

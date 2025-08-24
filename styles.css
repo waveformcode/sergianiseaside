@@ -49,14 +49,8 @@ nav a {
   width: 1800px;
   height: 100%;
   object-fit: cover;
+  position: relative;
   aspect-ratio: 16 / 9;
-}
-
-.black-layer {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.215);
-  z-index: 1;
 }
 
 /*==== HERO TYPOGRAPHY ====*/
@@ -131,66 +125,62 @@ button {
 }
 
 /*==== DISHES SECTION ====*/
+.dishes-container {
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
+.meat,
+.fish {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 320px;
+  min-width: 0;
+  justify-content: center;
+}
+
 .dishes {
+  width: 100%;
+  height: 100%;
   padding: 70px 70px;
   background-color: rgb(246, 242, 236);
 }
 
-.dishes-container {
-  display: grid;
-  width: 100%;
-  height: auto;
-  grid-template-areas: "meat fish";
-  grid-template-columns: 640px 640px;
-  gap: 50px;
-}
-
-.meat {
-  grid-area: meat;
-  margin-top: 100px;
-}
-
-.fish {
-  grid-area: fish;
-}
-
-.meat img {
-  width: 100%;
-  max-height: 640px;
-  object-fit: cover;
-  box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
-}
-
-.meat p {
-  max-width: 600px;
-  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
-  margin-top: 100px;
-}
-
+.meat img,
 .fish img {
+  display: block;
   width: 100%;
-  max-width: 640px;
-  max-height: 640px;
+  max-width: 100%;
+  height: 640px;
   object-fit: cover;
   box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
 }
 
-.fish-p {
-  font-size: 2.3rem;
-  margin-bottom: 80px;
-  max-width: 640px;
-  letter-spacing: 0.1rem;
-  text-align: center;
-  font-family: "Bellefair", serif !important;
+.paragraph {
+  width: 100%;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  padding: 60px 40px 0 0;
 }
 
-.dishes-menu {
+.dishes-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.dishes a {
   text-align: center;
   font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
   margin-bottom: 80px;
   font-family: "Geist", sans-serif;
   font-weight: 500;
   position: relative;
+  font-family: "Bellefair", serif !important;
+  margin-top: 40px;
 }
 
 .dishes-menu::before {
@@ -203,92 +193,76 @@ button {
 }
 
 /*==== WINES SECTION ====*/
-.wine-containe {
+.wine-container {
+  width: 100%;
+  height: 100%;
   padding: 70px 70px;
   background-color: rgb(246, 242, 236);
 }
 
 .wines {
-  display: grid;
-  width: 100%;
-  height: auto;
-  grid-template-areas: "wine wine2";
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 120px;
 }
 
-.wine {
-  grid-area: wine;
-}
-
-.wine2 {
-  grid-area: wine2;
-}
-
-.wine img {
-  width: 100%;
-  max-width: 540px;
-  height: 100%;
-  max-height: 600px;
-  object-fit: cover;
-  box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
-}
-
-.wine p {
-  max-width: 540px;
-  font-family: "Bellefair", serif;
-  font-size: clamp(1rem, 3vw + 0.5rem, 2.3rem);
-  margin-bottom: 100px;
-  text-align: center;
-  line-height: 1.5;
-}
-
+.wine,
 .wine2 {
   display: flex;
   flex-direction: column;
+  flex: 1 1 320px;
+  min-width: 0;
+  justify-content: center;
 }
 
-.wine2 img {
+.wine-img,
+.wine-img2 {
+  display: block;
   width: 100%;
-  max-width: 540px;
-  height: 100%;
-  max-height: 440px;
+  max-width: 100%;
+  height: 640px;
   object-fit: cover;
   box-shadow: 5px 5px 50px 5px rgba(0, 0, 0, 0.293);
 }
 
-.wine2 p {
+.wine-paragraph {
   width: 100%;
-  max-width: 540px;
-  padding: 30px;
   font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
-  margin-bottom: 80px;
-  font-weight: 400;
-  letter-spacing: 0.1rem !important;
-  margin-top: 60px;
+  padding: 60px 40px 0 0;
+}
+
+.wine-heading {
+  width: 100%;
+  text-align: center;
 }
 
 .wine2 a {
-  position: relative;
-  display: block;
   text-align: center;
-  font-family: "Geist", sans-serif;
   font-size: clamp(1rem, 1vw + 0.5rem, 1.3rem);
+  margin-bottom: 80px;
+  font-family: "Geist", sans-serif;
   font-weight: 500;
-  text-decoration: none;
+  position: relative;
+  font-family: "Bellefair", serif !important;
   color: black;
+  text-decoration: none;
+  margin-top: 40px;
 }
 
 .wine2 a::after {
   content: "";
   position: absolute;
+  left: 50%;
   bottom: -4px;
-  left: 120px;
+  transform: translateX(-50%);
   width: 20%;
   height: 2px;
   background: black;
 }
-
 /*==== SEAFRONT ====*/
 .sea {
   display: flex;
@@ -316,6 +290,69 @@ button {
   color: white;
   top: 60%;
   font-weight: 600;
+  text-align: center;
+}
+
+/*==== ABOUT ====*/
+.about {
+  width: 100%;
+  height: 100%;
+  padding: 70px 70px;
+  background-color: rgb(246, 242, 236);
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "about img about-paragraph";
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
+.about img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.about-container p {
+  width: 100%;
+  font-size: 1.3rem;
+  font-size: clamp(1rem, 1vw, 1.2rem);
+  margin: 0 auto;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "team img team-paragraph";
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
+.team img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.team p {
+  width: 100%;
+  font-size: 1.3rem;
+  font-size: clamp(1rem, 1vw, 1.2rem);
+}
+
+.about h2 {
   text-align: center;
 }
 
@@ -363,11 +400,11 @@ footer {
 
 .contacts ul {
   list-style-type: none;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .book-now-footer {
-  font-size: clamp(0.8rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 /*==== FOOTER SOCIAL MEDIA ====*/
@@ -441,6 +478,43 @@ iframe {
   .dishes-container {
     display: flex;
     flex-direction: column;
+  }
+
+  .meat,
+  .fish {
+    display: flex;
+    flex-direction: row;
+    display: contents;
+  }
+
+  .fish-img {
+    order: 2;
+  }
+
+  .fish-p {
+    font-size: clamp(1rem, 3vw, 5rem);
+    margin: 20px 0;
+    text-align: center;
+    order: 1;
+  }
+
+  .dishes-menu {
+    font-size: 1.1rem;
+    text-align: center;
+    order: 4;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    margin: 20px 0 40px 0;
+    line-height: 1.6;
+    text-align: center;
+    order: 3;
+  }
+
+  .meat-img {
+    margin-top: 20px;
+    order: 4;
   }
 
   .wines {
