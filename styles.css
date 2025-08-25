@@ -91,11 +91,13 @@ button {
 
 .wave {
   position: absolute;
-  bottom: 0;
   left: 0;
+  bottom: -1px;   
   width: 100%;
-  z-index: 2;
-}
+  height: 120px;  
+  display: block;
+  z-index: 3;   
+}  
 
 /*==== INTRO ====*/
 .intro {
@@ -308,29 +310,39 @@ button {
 }
 
 /*==== ABOUT ====*/
-.about-container {
-  display: grid;
-  width: 100%;
-  height: 100%;
+.about-nav {
+  position: relative;
 }
 
-.our-story {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "about-img about-paragraph";
-  width: 100%;
-  height: 100%;
+.our-story,
+.our-team {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  gap: 50px;
+  margin: 60px auto;
+  max-width: 1200px;    
 }
 
-.about-img {
-  grid-area: about-img;
-  width: 500px;
-  height: 500px;
+.our-story img,
+.our-team img {
+  flex: 1;              
+  max-width: 500px;     
+  max-height: 500px;         
+  object-fit: cover;    
+  border-radius: 10px;  
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
 }
 
-.about-paragraph {
-  grid-area: about-paragraph;
+.our-story p,
+.our-team p {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
 }
+
+
 
 /*==== FOOTER ====*/
 footer {
@@ -502,6 +514,7 @@ iframe {
   .paragraph {
     order: 3;
     margin-top: 0;
+     padding: 60px 20px 0 20px;
   }
 
   .dishes-menu {
@@ -557,6 +570,34 @@ iframe {
   /*==== SEA MOBILE ====*/
   .seafront-paragraph {
     padding-bottom: 60px;
+  }
+
+   /*==== ABOUT MOBILE ====*/
+    .our-story,
+  .our-team {
+    display: flex;             /* όχι contents */
+    flex-direction: column;    /* κάθετα */
+    align-items: center;       /* κεντράρει οριζόντια */
+    text-align: center;        /* κείμενο στο κέντρο */
+    gap: 20px;                 /* λίγο κενό ανάμεσα */
+  }
+
+  .our-story img,
+  .our-team img {
+    max-width: 90%;
+  }
+
+  .our-story p,
+  .our-team p {
+    max-width: 90%;
+  }
+
+  /* Για το our-team αν θες η εικόνα κάτω */
+  .our-team img {
+    order: 1;
+  }
+  .our-team p {
+    order: 2;
   }
 
   /*==== FOOTER MOBILE ====*/
