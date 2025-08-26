@@ -342,6 +342,59 @@ button {
   max-width: 500px;
 }
 
+/*==== MENU ====*/
+.menu-body {
+  font-family: Arial, sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.menu-nav {
+  position: relative;
+}
+
+.menu-container {
+  margin-bottom: 40px;
+}
+
+.header {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+}
+
+.menu-container h2 {
+  background-color: #032f30;
+  color: white;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+}
+
+.menu-item {
+  font-weight: 500;
+}
+
+.price {
+  font-weight: 600;
+}
 /*==== FOOTER ====*/
 footer {
   display: flex;
