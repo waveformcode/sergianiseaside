@@ -184,6 +184,8 @@ button {
   position: relative;
   font-family: "Bellefair", serif !important;
   margin-top: 40px;
+  color: black;
+  text-decoration: none;
 }
 
 .dishes-menu::before {
@@ -343,12 +345,13 @@ button {
 }
 
 /*==== MENU ====*/
-.menu-body {
+.menu-main,
+.drinks-main {
   font-family: Arial, sans-serif;
   background-color: rgb(246, 242, 236);
   color: #333;
   padding: 20px;
-  max-width: 900px;
+  max-width: 100%;
   margin: auto;
 }
 
@@ -356,12 +359,59 @@ button {
   position: relative;
 }
 
+/*==== MENU NAVIGATION ====*/
+.food-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.food-nav ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.food-nav li {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.food-nav a {
+  display: block;
+
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #033030;
+}
+.food-nav a:hover {
+  text-decoration: underline;
+}
+
 .menu-container {
-  margin-bottom: 40px;
+  scroll-margin-top: 90px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*==== MENU CONTAINER ====*/
+.menu-container {
+  margin: 40px 0 40px 0;
 }
 
 .header {
-  font-size: 1.8rem;
   border-bottom: 2px solid #333;
   padding-bottom: 5px;
   margin-bottom: 15px;
@@ -373,6 +423,8 @@ button {
 .menu-container h2 {
   background-color: #032f30;
   color: white;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: 10px;
 }
 
 .menu-list {
@@ -395,6 +447,51 @@ button {
 .price {
   font-weight: 600;
 }
+
+.wine-body {
+  font-family: Arial, sans-serif;
+  background: #fdfdfd;
+  color: #333;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+.menu-container {
+  margin-bottom: 40px;
+}
+.header {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+  gap: 16px;
+}
+.menu-item {
+  font-weight: 500;
+  flex: 1;
+}
+.price {
+  font-weight: 600;
+  white-space: nowrap;
+}
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 30px;
+}
+
 /*==== FOOTER ====*/
 footer {
   display: flex;
@@ -405,7 +502,7 @@ footer {
   padding: 80px 40px 80px 40px;
   background-color: #032f30;
   color: white;
-  gap: 200px;
+  gap: 100px;
 }
 
 .footer-logo img {
@@ -499,6 +596,34 @@ footer {
   font-size: 12px;
 
   font-size: clamp(0.6rem, 2vw, 0.75rem);
+}
+
+/*==== FOOTER LINKS ====*/
+
+.links h3 {
+  font-family: "Geist", sans-serif;
+  letter-spacing: 0.2rem;
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.links ul {
+  list-style-type: none;
+  padding-top: 10px;
+}
+
+.links li {
+  list-style-type: none;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2;
+}
+
+.links a {
+  text-decoration: none;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #ffffff;
 }
 
 /*==== FOOTER MAP ====*/
