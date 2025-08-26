@@ -345,7 +345,7 @@ button {
 /*==== MENU ====*/
 .menu-body {
   font-family: Arial, sans-serif;
-  background: #fdfdfd;
+  background-color: rgb(246, 242, 236);
   color: #333;
   padding: 20px;
   max-width: 900px;
