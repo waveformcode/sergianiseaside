@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <title>RESTAURANT MENU</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #fdfdfd;
+        color: #333;
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .menu-nav {
+        position: relative;
+      }
+
+      .menu-container {
+        margin-bottom: 40px;
+      }
+
+      .header {
+        font-size: 1.8rem;
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+         font-family: "Bellefair", serif;
+         font-weight: 400;
+      }
+
+      .menu-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .menu-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px dotted #ccc;
+      }
+
+      .menu-item {
+        font-weight: 500;
+      }
+
+      .price {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <nav class="menu-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">HOME</a></li>
+          <li><a href="menu.html">MENU</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="#footer">CONTACT</a></li>
+        </ul>
+      </nav>
+  <body>
+    <!-- Welcome -->
+    <section class="menu-container">
+      <h2 class="header">Welcome</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item"
+            >Three types of bread (white, sourdough & multigrain)</span
+          ><span class="price">2.00 / person</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Handmade grilled pitas with throubi & extra virgin olive oil</span
+          ><span class="price">3.80</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Spreads -->
+    <section class="menu-container">
+      <h2 class="header">Spreads</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item"
+            >Tzatziki with Greek strained yogurt & fresh cucumber</span
+          ><span class="price">5.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Tarama with white authentic caviar, extra virgin olive oil & lemon
+            aroma</span
+          ><span class="price">6.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Traditional spicy cheese with fresh roasted hot pepper</span
+          ><span class="price">5.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Appetizers -->
+    <section class="menu-container">
+      <h2 class="header">Appetizers</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item"
+            >Greek Feta cheese in filo pastry, honey & sesame</span
+          ><span class="price">7.50</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Fresh French fries</span
+          ><span class="price">4.50</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Crispy smashed potatoes with truffle aroma & grated Cretan aged
+            gruyere</span
+          ><span class="price">6.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Chicken meatballs with parsnip purée & Cretan orange sauce</span
+          ><span class="price">8.90</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Pork ‘Tiganórizo’ – fried rice, mushrooms, fresh tomato &
+            herbs</span
+          ><span class="price">9.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >‘Spetsofaï’ – traditional country style beef sausage, peppers,
+            tomato sauce & fresh thyme</span
+          ><span class="price">9.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Zucchini balls with Cretan mizithra, mint & herbs</span
+          ><span class="price">7.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Fresh steamed mussels with spicy chili pepper & fresh basil</span
+          ><span class="price">9.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Fresh fried calamari with squid ink sauce</span
+          ><span class="price">9.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Shrimp Saganaki with fresh tomato sauce, Greek feta & ouzo</span
+          ><span class="price">11.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Grilled squid with fresh herbs, lemon & extra virgin olive
+            oil</span
+          ><span class="price">14.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Grilled octopus with fava beans cream, caramelized onion & Cretan
+            extra virgin olive oil</span
+          ><span class="price">14.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Fried zucchini with sour tzatziki sauce</span
+          ><span class="price">7.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Greek baked Feta with tomato, roasted peppers, oregano & fresh
+            herbs</span
+          ><span class="price">8.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Grilled shrimps with extra virgin olive oil</span
+          ><span class="price">13.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Pasta & Risotto -->
+    <section class="menu-container">
+      <h2 class="header">Pasta & Risotto</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Orzo with seafood</span
+          ><span class="price">17.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Linguine with shrimps, cherry tomatoes, parmesan & local raki</span
+          ><span class="price">16.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Risotto genistido – mint flavored risotto with Greek sheep yogurt &
+            Greek Florinis pepper</span
+          ><span class="price">13.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Beef Ragout in homemade pasta ‘Skioufichta’</span
+          ><span class="price">15.50</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Salads -->
+    <section class="menu-container">
+      <h2 class="header">Salads</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Traditional Greek Salad</span
+          ><span class="price">9.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Cretan Salad</span
+          ><span class="price">10.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Sergiani Seaside Salad</span
+          ><span class="price">10.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">‘Horta’ – seasonal greens</span
+          ><span class="price">5.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Catch of the day -->
+    <section class="menu-container">
+      <h2 class="header">Catch of the Day</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Small fish of the day fried</span
+          ><span class="price">8.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Fresh fish of the day grilled</span
+          ><span class="price">50.00–60.00 / kg</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- On the grill -->
+    <section class="menu-container">
+      <h2 class="header">On the Grill</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Beef Burgers</span
+          ><span class="price">14.50</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Pork chop (800–900g)</span
+          ><span class="price">18.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Tagliata (300g)</span
+          ><span class="price">34.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Chicken ‘Kontosouvli’ (600–700g)</span
+          ><span class="price">17.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Grilled tuna (300g)</span
+          ><span class="price">19.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Grilled Seabream</span
+          ><span class="price">21.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Kids Menu -->
+    <section class="menu-container">
+      <h2 class="header">Kids Menu</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Butter / tomato / olive oil pasta</span
+          ><span class="price">4.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Handmade chicken bites</span
+          ><span class="price">7.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Handmade fish bites</span
+          ><span class="price">7.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Shellfish & Crustacean -->
+    <section class="menu-container">
+      <h2 class="header">Shellfish & Crustacean</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Fresh oysters</span
+          ><span class="price">5.00 / piece</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Grilled lobsters</span
+          ><span class="price">90.00 / kg</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Grilled slipper lobster</span
+          ><span class="price">108.00 / kg</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Jumbo shrimp with butter</span
+          ><span class="price">90.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Marinated -->
+    <section class="menu-container">
+      <h2 class="header">Marinated</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Marinated anchovies</span
+          ><span class="price">6.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Seabass Ceviche</span
+          ><span class="price">14.00</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Tuna Tartare</span
+          ><span class="price">16.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Home Cooking -->
+    <section class="menu-container">
+      <h2 class="header">Home Cooking</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item">Moussaka</span
+          ><span class="price">12.00</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Desserts -->
+    <section class="menu-container">
+      <h2 class="header">Desserts</h2>
+      <ul class="menu-list">
+        <li class="menu-row">
+          <span class="menu-item"
+            >Chocolate Pie with bitter chocolate glaze & Dulce de leche
+            sauce</span
+          ><span class="price">11.80</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item"
+            >Traditional Orange Pie with ice cream & chocolate zest</span
+          ><span class="price">8.50</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Ice Cream per scoop</span
+          ><span class="price">2.50</span>
+        </li>
+        <li class="menu-row">
+          <span class="menu-item">Sweet of the Day</span
+          ><span class="price"></span>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
