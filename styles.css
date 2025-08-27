@@ -34,6 +34,10 @@ nav a {
   color: black;
 }
 
+.drop-down {
+  display: none;
+}
+
 /*==== HERO ====*/
 .hero {
   display: flex;
@@ -52,6 +56,17 @@ nav a {
   position: relative;
   aspect-ratio: 16 / 9;
 }
+
+
+
+.menu-layer::before {
+   content: "";
+  position: absolute;
+  inset: 0; 
+  background: rgba(0, 0, 0, 0.316); 
+  z-index: 1; /
+}
+
 
 /*==== HERO TYPOGRAPHY ====*/
 .typography {
@@ -523,7 +538,7 @@ footer {
 .contacts h3 {
   font-family: "Geist", sans-serif;
   letter-spacing: 0.2rem;
-  font-weight: 500;
+
   font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 
@@ -603,13 +618,12 @@ footer {
 .links h3 {
   font-family: "Geist", sans-serif;
   letter-spacing: 0.2rem;
-  font-weight: 500;
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  margin-bottom: 10px;
 }
 
 .links ul {
   list-style-type: none;
-  padding-top: 10px;
 }
 
 .links li {
