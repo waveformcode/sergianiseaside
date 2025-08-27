@@ -38,7 +38,19 @@
         </ul>
       </nav>
       <div class="hero-media">
-        <img src="images/the-space.jpg" alt="Restautant" />
+        <img
+          src="images/out/1920/the-space.jpg"
+          srcset="
+            images/out/320/the-space.jpg   320w,
+            images/out/640/the-space.jpg   640w,
+            images/out/1024/the-space.jpg 1024w,
+            images/out/1920/the-space.jpg 1920w
+          "
+          sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         1000px"
+          alt="RESTAURANT VIEW"
+        />
       </div>
       <div class="black-layer"></div>
       <div class="typography">
@@ -151,7 +163,7 @@
 
           <div class="wine2">
             <h2 class="wine-heading fade-in">SAVOR EVERY SIP OF TRADITION</h2>
-            <a class="wine-list fade-in" href="wine-list.html"
+            <a class="wine-list f srcsetade-in" href="wine-list.html"
               >DISCOVER OUR WINE LIST</a
             >
             <img

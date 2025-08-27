@@ -150,6 +150,15 @@ button {
   opacity: 1;
 }
 
+.dishes-heading.fade-in {
+  animation-delay: 0s; /* Αμέσως */
+}
+
+/* Το link να έρθει λίγο μετά */
+.dishes-menu.fade-in {
+  animation-delay: 2s;
+}
+
 /*==== INTRO ====*/
 .intro {
   width: 100%;
@@ -819,29 +828,32 @@ iframe {
   /*==== ABOUT MOBILE ====*/
   .our-story,
   .our-team {
-    display: flex; /* όχι contents */
-    flex-direction: column; /* κάθετα */
-    align-items: center; /* κεντράρει οριζόντια */
-    text-align: center; /* κείμενο στο κέντρο */
-    gap: 20px; /* λίγο κενό ανάμεσα */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
   }
 
   .our-story img,
   .our-team img {
-    max-width: 90%;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
   }
 
-  .our-story p,
-  .our-team p {
-    max-width: 90%;
-  }
-
-  /* Για το our-team αν θες η εικόνα κάτω */
-  .our-team img {
-    order: 1;
-  }
   .our-team p {
     order: 2;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .our-team img {
+    order: 1;
+    padding: 0;
+    margin: 0;
   }
 
   /*==== FOOTER MOBILE ====*/

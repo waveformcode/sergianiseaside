@@ -40,7 +40,19 @@
       </nav>
       <div class="hero-media">
         <div class="menu-layer"></div>
-        <img src="images/menu-img.jpg" alt="Restautant" />
+        <img
+          src="images/out/1920/menu-img.jpg"
+          srcset="
+            images/out/320/menu-img.jpg   320w,
+            images/out/640/menu-img.jpg   640w,
+            images/out/1024/menu-img.jpg 1024w,
+            images/out/1920/menu-img.jpg 1920w
+          "
+          sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         1000px"
+          alt="Cretan slow-cooked pork"
+        />
       </div>
       <div class="black-layer"></div>
       <div class="typography">

@@ -40,14 +40,25 @@
       </nav>
       <div class="hero-media">
         <div class="menu-layer"></div>
-        <img src="images/wine-hero2.jpg" alt="Restautant" />
+        <img
+          src="images/out/1920/wine-hero2.jpg"
+          srcset="
+            images/out/320/wine-hero2.jpg    320w,
+            images/out/640/wine-hero2.jpg    640w,
+            images/out/1024/wine-hero2..jpg 1024w,
+            images/out/1920/wine-hero2.jpg  1920w
+          "
+          sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         1000px"
+          alt="Rose Wine"
+        />
       </div>
       <div class="black-layer"></div>
       <div class="typography">
         <h1>WINE LIST</h1>
       </div>
     </header>
-
     <main class="menu-main">
       <!-- WINES NAVIGATION -->
       <nav class="food-nav">
