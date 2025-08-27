@@ -18,12 +18,20 @@
     />
     <title>ABOUT</title>
   </head>
-  <body>
+  <body class="about-body">
     <header>
-      <nav class="about-nav">
+      <nav class="about-nav" aria-label="Primary">
         <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="menu.html">MENU</a></li>
+          <li><a href="index.html" aria-current="page">HOME</a></li>
+          <li>
+            <a href="#">MENU &#9660;</a>
+            <ul class="drop-down">
+              <li><a href="food.html">FOOD</a></li>
+              <li><a href="wine-list.html">WINES</a></li>
+              <li><a href="drinks.html">DRINKS</a></li>
+            </ul>
+          </li>
+
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="#footer">CONTACT</a></li>
         </ul>
@@ -47,32 +55,38 @@
          1000px"
             alt="About us"
           />
-          <p class="about-paragraph">
-            The Sergiani Seaside is a family-owned business with deep roots in
-            the tradition of fresh fish. For years, our family has been
-            dedicated to providing the best quality from the sea to your plate
-            through our own fish market. At our restaurant, however, you will
-            discover much more than just fish and seafood. Our menu embraces
-            Greek and Mediterranean cuisine in all its richness: selected meats,
-            pasta, seasonal vegetables, and fresh greens, all cooked with love
-            and served with care. Complete your meal with a carefully curated
-            list of fine Greek wines, while enjoying the atmosphere of the
-            seaside promenade of Agios Nikolaos. Right by the water, with a view
-            of the picturesque harbor, Sergiani Seaside invites you to
-            experience authentic hospitality and true taste.
-          </p>
+          <div class="story-typography">
+            <h1>OUR STORY</h1>
+            <p class="about-paragraph">
+              The Sergiani Seaside is a family-owned business with deep roots in
+              the tradition of fresh fish. For years, our family has been
+              dedicated to providing the best quality from the sea to your plate
+              through our own fish market. At our restaurant, however, you will
+              discover much more than just fish and seafood. Our menu embraces
+              Greek and Mediterranean cuisine in all its richness: selected
+              meats, pasta, seasonal vegetables, and fresh greens, all cooked
+              with love and served with care. Complete your meal with a
+              carefully curated list of fine Greek wines, while enjoying the
+              atmosphere of the seaside promenade of Agios Nikolaos. Right by
+              the water, with a view of the picturesque harbor, Sergiani Seaside
+              invites you to experience authentic hospitality and true taste.
+            </p>
+          </div>
         </div>
 
         <div class="our-team">
-          <p>
-            At the heart of our restaurant is a passionate team dedicated to
-            creating unforgettable dining experiences. From our talented chefs
-            who craft every dish with skill and creativity, to our attentive
-            waiters who serve each guest with warmth and professionalism, every
-            member of our team plays an important role. Working together like a
-            family, we share a commitment to quality, hospitality, and genuine
-            care, making sure that every visit feels special.
-          </p>
+          <div class="team-typography">
+            <h1>OUR TEAM</h1>
+            <p>
+              At the heart of our restaurant is a passionate team dedicated to
+              creating unforgettable dining experiences. From our talented chefs
+              who craft every dish with skill and creativity, to our attentive
+              waiters who serve each guest with warmth and professionalism,
+              every member of our team plays an important role. Working together
+              like a family, we share a commitment to quality, hospitality, and
+              genuine care, making sure that every visit feels special.
+            </p>
+          </div>
           <img
             class="team-img"
             src="images/out/1920/team.jpg"

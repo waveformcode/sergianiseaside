@@ -24,7 +24,15 @@
       <nav aria-label="Primary">
         <ul>
           <li><a href="index.html" aria-current="page">HOME</a></li>
-          <li><a href="menu.html">MENU</a></li>
+          <li>
+            <a href="#">MENU &#9660;</a>
+            <ul class="drop-down">
+              <li><a href="food.html">FOOD</a></li>
+              <li><a href="wine-list.html">WINES</a></li>
+              <li><a href="drinks.html">DRINKS</a></li>
+            </ul>
+          </li>
+
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="#footer">CONTACT</a></li>
         </ul>
@@ -55,8 +63,8 @@
       <!-- INTRO -->
       <section class="intro">
         <div>
-          <h2>THE RESTAURANT</h2>
-          <p>
+          <h2 class="fade-in">THE RESTAURANT</h2>
+          <p class="fade-in">
             Our philosophy is simple: real food, full of flavor. Inspired by the
             rich culinary heritage of Crete, we combine tradition and
             imagination to create dishes that stay in your memory. Each plate is
@@ -72,7 +80,7 @@
         <div class="dishes-container">
           <div class="fish fade-in">
             <img
-              class="fish-img"
+              class="fish-img fade-in"
               src="images/out/1920/tuna-steak.jpg"
               srcset="
                 images/out/320/tuna-steak.jpg   320w,
@@ -86,7 +94,7 @@
               alt="Tuna steak on the grill"
             />
 
-            <p class="paragraph">
+            <p class="paragraph fade-in">
               Experience the charm of seaside dining with a menu inspired by the
               Mediterranean way of life. Fresh flavors, vibrant colors, and
               dishes prepared with care create an atmosphere where every meal is
@@ -95,10 +103,10 @@
           </div>
 
           <div class="meat fade-in">
-            <h2 class="dishes-heading">THE TASTE OF MEDITERRANEAN</h2>
+            <h2 class="dishes-heading fade-in">THE TASTE OF MEDITERRANEAN</h2>
             <a class="dishes-menu" href="menu.html">DISCOVER THE MENU</a>
             <img
-              class="meat-img"
+              class="meat-img fade-in"
               src="images/out/1920/AIV09362-ARW.jpg"
               srcset="
                 images/out/320/AIV09362-ARW.jpg   320w,
@@ -120,7 +128,7 @@
         <div class="wines">
           <div class="wine fade-in">
             <img
-              class="wine-img"
+              class="wine-img fade-in"
               id="bottle"
               src="images/out/1920/wine.jpg"
               srcset="
@@ -142,7 +150,7 @@
           </div>
 
           <div class="wine2">
-            <h2 class="wine-heading">SAVOR EVERY SIP OF TRADITION</h2>
+            <h2 class="wine-heading fade-in">SAVOR EVERY SIP OF TRADITION</h2>
             <a class="wine-list fade-in" href="wine-list.html"
               >DISCOVER OUR WINE LIST</a
             >
@@ -167,6 +175,7 @@
       <!-- SEAFRONT -->
       <section class="seafront">
         <div class="sea">
+          <div class="sea-layer"></div>
           <img
             class="fade-in"
             src="images/out/1920/Σεργιανι Photos -11.jpg"
