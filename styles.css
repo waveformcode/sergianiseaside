@@ -18,7 +18,7 @@ html[lang="el"] {
 .lang-el .intro-paragraph,
 .lang-el .wine-paragraph,
 .lang-el .seafront-paragraph {
-  font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem);
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem);
 }
 
 .lang-el .seafront-paragraph {
@@ -43,7 +43,7 @@ nav ul {
 nav li {
   list-style-type: none;
   font-family: "Geist", sans-serif;
-  font-size: clamp(0.8rem, 1vw + 0.5rem, 1rem);
+  font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
   font-weight: 600;
 }
 
@@ -151,7 +151,7 @@ ul li:hover ul.drop-down {
 button {
   background-color: rgb(246, 242, 236);
   padding: 10px 15px;
-  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  font-size: clamp(1rem, 1vw, 1.2rem);
   color: rgb(0, 0, 0);
   border: none;
   border-radius: 10px;
