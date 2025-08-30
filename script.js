@@ -59,62 +59,85 @@
   });
 })();
 
-// ===== i18n (UI) + Wines render =====
-(async function () {
-  // Κάνε την setLocale global ΠΡΙΝ από fetch ώστε να δουλεύουν τα κουμπιά πάντα
-  window.setLocale = function (lng) {
-    localStorage.setItem("locale", lng);
-    location.reload();
-  };
-
-  const locale = localStorage.getItem("locale") || "en";
-  document.documentElement.setAttribute("lang", locale);
-
-  // --- UI i18n (relative paths! μην βάζεις αρχικό / σε GitHub Pages) ---
-  try {
-    const i18n = await (await fetch(`lang/${locale}.json`)).json();
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      if (i18n[key]) el.textContent = i18n[key];
-    });
-  } catch (e) {
-    console.warn("i18n load failed:", e);
+// dropdown
+// === Dropdown for .has-submenu (works on tap, closes on outside tap) ===
+(function () {
+  // Inject a tiny style so we beat your CSS display:none/hover rules
+  if (!document.getElementById("dropdown-open-style")) {
+    const style = document.createElement("style");
+    style.id = "dropdown-open-style";
+    style.textContent =
+      "nav .has-submenu.open > .drop-down { display: block !important; }";
+    document.head.appendChild(style);
   }
 
-  // --- Wines data render ---
-  try {
-    const data = await (await fetch("data/wines.json")).json();
-    if (!Array.isArray(data.categories) || !Array.isArray(data.items)) {
-      console.error("wines.json: wrong shape");
-      return;
+  function closeAll() {
+    document.querySelectorAll("nav .has-submenu.open").forEach((li) => {
+      li.classList.remove("open");
+      const a = li.querySelector("a");
+      if (a) a.setAttribute("aria-expanded", "false");
+    });
+  }
+
+  // Return the top-level trigger <a> if target is that; else null.
+  function getTriggerAnchor(target) {
+    const a = target.closest("a");
+    if (!a) return null;
+    const li = a.closest(".has-submenu");
+    if (!li) return null;
+    // ensure it's the direct child anchor of the .has-submenu (not a dropdown link)
+    if (a.parentElement !== li) return null;
+    return a;
+  }
+
+  function toggleFromAnchor(a) {
+    const li = a.parentElement; // since a.parentElement === .has-submenu
+    const willOpen = !li.classList.contains("open");
+    closeAll();
+    if (willOpen) {
+      li.classList.add("open");
+      a.setAttribute("aria-expanded", "true");
     }
-
-    data.categories.forEach((cat) => {
-      // ΠΡΟΣΟΧΗ: το id "champagnes–white/rose" έχει en–dash (–). Πρέπει να ταιριάζει ακριβώς με το HTML.
-      const section = document.getElementById(cat.id);
-      if (!section) return;
-
-      const h2 = section.querySelector("h2.header");
-      if (h2) h2.textContent = cat.title?.[locale] || cat.title?.en || "";
-
-      const ul = section.querySelector("ul.menu-list");
-      if (!ul) return;
-
-      const items = data.items.filter((i) => i.cat === cat.id);
-      ul.innerHTML = items
-        .map((i) => {
-          const name = i.name?.[locale] || i.name?.en || "";
-          const price = (i.price ?? "").toString().trim();
-          const priceClass = price ? "price" : "price empty";
-          return `
-<li class="menu-row">
-  <span class="menu-item">${name}</span>
-  <span class="${priceClass}">${price}</span>
-</li>`;
-        })
-        .join("");
-    });
-  } catch (e) {
-    console.error("wines load failed:", e);
   }
+
+  // Prevent the fake navigation of href="#"
+  document.addEventListener(
+    "pointerdown",
+    function (e) {
+      const a = getTriggerAnchor(e.target);
+      if (a) e.preventDefault();
+    },
+    { passive: false }
+  );
+
+  // Toggle on click/tap of the trigger
+  document.addEventListener(
+    "click",
+    function (e) {
+      const a = getTriggerAnchor(e.target);
+      if (a) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleFromAnchor(a);
+        return;
+      }
+      // Click on any dropdown item -> close
+      if (e.target.closest("nav .has-submenu .drop-down a")) {
+        closeAll();
+        return;
+      }
+      // Click outside any submenu -> close
+      if (!e.target.closest("nav .has-submenu")) {
+        closeAll();
+      }
+    },
+    { passive: false }
+  );
+
+  // Esc & window changes -> close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+  window.addEventListener("orientationchange", closeAll, { passive: true });
+  window.addEventListener("resize", closeAll, { passive: true });
 })();
