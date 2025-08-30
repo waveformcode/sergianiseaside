@@ -18,7 +18,7 @@ html[lang="el"] {
 .lang-el .intro-paragraph,
 .lang-el .wine-paragraph,
 .lang-el .seafront-paragraph {
-  font-size: clamp(0.8rem, 1vw + 0.5rem, 1.1rem);
+  font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem);
 }
 
 .lang-el .seafront-paragraph {
@@ -52,12 +52,16 @@ nav a {
   color: white;
 }
 
+.lang-switch a {
+  padding-left: 5px;
+}
+
 /*==== DROPDOWN ====*/
 .drop-down {
   display: none;
 }
 
-ul li ul.drop-down li {
+ul li:focus-within ul.drop-down {
   display: block;
 }
 
@@ -772,6 +776,11 @@ iframe {
     height: 700px;
     object-fit: cover;
   }
+  /*==== INTRO MEDIA ====*/
+  .intro-paragraph {
+    width: 90%;
+  }
+
   /*==== DISHES MEDIA ====*/
   .dishes,
   .wine-container,
