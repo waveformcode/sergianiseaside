@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <title>ΜΕΝΟΥ ΕΣΤΙΑΤΟΡΙΟΥ</title>
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <header class="hero">
+      <nav aria-label="Κύρια πλοήγηση">
+        <ul>
+          <li><a href="index-el.html" aria-current="page">ΑΡΧΙΚΗ</a></li>
+          <li>
+            <a>ΜΕΝΟΥ &#9660;</a>
+            <ul class="drop-down">
+              <li><a href="food-menu-el.html">ΦΑΓΗΤΑ</a></li>
+              <li><a href="wine-list-el.html">ΚΡΑΣΙΑ</a></li>
+              <li><a href="drinks-el.html">ΠΟΤΑ</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about-el.html">ΣΧΕΤΙΚΑ</a></li>
+          <li><a href="#footer">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+          <li class="lang-switch">
+            <a href="index.html">EN</a>
+            <a href="index-el.html">GR</a>
+          </li>
+          <!-- LANGUAGE SWITCH -->
+          <li class="lang-switch">
+            <a href="food-menu.html">EN</a>
+            <a href="food-menu-el.html">GR</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hero-media">
+        <div class="menu-layer"></div>
+        <img
+          src="images/out/1920/menu-img.jpg"
+          srcset="
+            images/out/320/menu-img.jpg   320w,
+            images/out/640/menu-img.jpg   640w,
+            images/out/1024/menu-img.jpg 1024w,
+            images/out/1920/menu-img.jpg 1920w
+          "
+          sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 50vw,
+         1000px"
+          alt="Κρητικό χοιρινό καπρικό σιγομαγειρεμένο"
+          loading="lazy"
+        />
+      </div>
+      <div class="black-layer"></div>
+      <div class="typography">
+        <h1>ΜΕΝΟΥ ΦΑΓΗΤΟΥ</h1>
+      </div>
+    </header>
+
+    <main class="menu-main">
+      <!-- FOOD NAVIGATION -->
+      <nav class="food-nav" aria-label="Πλοήγηση μενού">
+        <ul>
+          <li><a href="#spreads">ΑΛΟΙΦΕΣ</a></li>
+          <li><a href="#appetizers">ΟΡΕΚΤΙΚΑ</a></li>
+          <li><a href="#pasta">ΖΥΜΑΡΙΚΑ & ΡΙΖΟΤΟ</a></li>
+          <li><a href="#salads">ΣΑΛΑΤΕΣ</a></li>
+          <li><a href="#catch">ΨΑΡΙ ΗΜΕΡΑΣ</a></li>
+          <li><a href="#grill">ΣΤΗ ΣΧΑΡΑ</a></li>
+          <li><a href="#shellfish">ΟΣΤΡΑΚΟΕΙΔΗ & ΚΑΡΚΙΝΟΕΙΔΗ</a></li>
+          <li><a href="#marinated">ΜΑΡΙΝΑΤΑ</a></li>
+          <li><a href="#home">ΜΑΓΕΙΡΕΥΤΑ</a></li>
+          <li><a href="#kids">ΠΑΙΔΙΚΟ ΜΕΝΟΥ</a></li>
+          <li><a href="#desserts">ΓΛΥΚΑ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Welcome -->
+      <!-- Ψωμί & Πίτες -->
+      <section class="menu-container">
+        <h2 class="header">Ψωμί & Πίτες</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Τρία είδη ψωμιών (λευκό, προζυμένιο και πολύσπορο)</span
+            >
+            <span class="price">2.00 / άτομο</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Χειροποίητα πιτάκια σχάρας και έξτρα παρθένο ελαιόλαδο</span
+            >
+            <span class="price">3.80</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Αλείμματα -->
+      <section id="spreads" class="menu-container">
+        <h2 class="header">Αλοιφές</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Τζατζίκι με ελληνικό στραγγιστό γιαούρτι και φρέσκο
+              αγγουράκι</span
+            >
+            <span class="price">5.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Ταραμάς με αυθεντικό λευκό τραμά, έξτρα παρθένο ελαιόλαδο και
+              άρωμα λεμονιού</span
+            >
+            <span class="price">6.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Παραδοσιακή τυροκαυτερή με φρέσκια ψητή καυτερή πιπεριά</span
+            >
+            <span class="price">5.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Ορεκτικά -->
+      <section id="appetizers" class="menu-container">
+        <h2 class="header">Ορεκτικά</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Φέτα σε φύλλο κρούστας, μέλι και σουσάμι</span
+            ><span class="price">7.50</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Φρέσκιες τηγανητές πατάτες</span
+            ><span class="price">4.50</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Πατάτες «σκαστές» με άρωμα τρούφας και τριμμένη παλαιωμένη
+              γραβιέρα</span
+            ><span class="price">6.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Κεφτεδάκια κοτόπουλου με πουρέ παστινάκι και σάλτσα
+              γραβιέρας</span
+            ><span class="price">8.50</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Χοιρινή τηγανιά ζουμερά κομμάτια χοιρινού, μανιτάρια, τριμμένη
+              ντομάτα, πράσινο κρεμμυδάκι, φρέσκια μαντζουράνα και τριμμένη
+              γραβιέρα</span
+            ><span class="price">9.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Σπετσοφάι – με μοσχαρίσιο χωριάτικο λουκάνικο, πολύχρωμες
+              πιπεριές, σάλτσα ντομάτας και φρέσκο θυμάρι</span
+            ><span class="price">9.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Κολοκυθοκεφτέδες, φρέσκο κολοκύθι, ελληνική φέτσ, δυόσμο και
+              φρέσκα μυρωδικά</span
+            ><span class="price">7.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Γαρίδες σχάρας με λαδολέμονο</span
+            ><span class="price">13.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Φρέσκα αχνιστά μύδια με καυτερή πιπεριά τσίλι και φρέσκο
+              βασιλικό</span
+            ><span class="price">9.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Φρέσκο καλαμαράκι τηγανιτό με σάλτσα αγιολί</span
+            ><span class="price">9.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Γαρίδες σαγανάκι με φρέσκια σάλτσα ντομάτας, ελληνική φέτα
+              φρέσκια ρίγανη</span
+            ><span class="price">11.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >καλαμάρι σχάρας με φρέσκα βότανα, φρέσκο λεμόνι και λάδι απο
+              λουκάνικο τσορίθο</span
+            ><span class="price">14.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Φρέσκο χταπόδι σχάρας, καραμελωμένο κρεμμύδι, εξτρα παρθένο
+              ελαιόλαδο</span
+            ><span class="price">14.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Κολοκυθάκια με ξινή σάλτσα</span
+            ><span class="price">5.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Μπουγιουρντί, φέτα ψητή με ντομάτα, φρέσκια πράσινη πιπεριά και
+              γλυκό μπούκοβο</span
+            ><span class="price">6.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Pasta & Risotto -->
+      <section id="pasta" class="menu-container">
+        <h2 class="header">Pasta & Risotto</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Κριθαρώτο με θαλασσινά, φρέσκα μύδια, αχιβάδες, pesto ρόκας και
+              ντοματίνια κονφί</span
+            ><span class="price">17.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Λινγκουίνι με γαρίδες, φέτα, φρέσκα ντοματίνια, παλαιωμένη
+              παρμεζάνα και ντόπια ρακή</span
+            ><span class="price">16.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Ριζότο γεμιστό, ριζότο με άρωμα δυόσμου, πρόβειο ελληνικό
+              γιαούρτι και πιπεριά Φλωρίνης</span
+            ><span class="price">12.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Σκιουφιχτά ραγού, μοσχαριού σιγομαγειρεμένο με ντομάτα,
+              Παραδοσιακά Κρητικ΄σ ζυμαρικά & τριμμςενο Κτητικο ανθότυρο</span
+            ><span class="price">15.50</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Σαλάτες -->
+      <section id="salads" class="menu-container">
+        <h2 class="header">Σαλάτες</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Ελληνική χωριάτικη, με ντομάτα, αγγούρι, λευκό κρεμμύδι, πράσινη
+              πιπεριά, ελιές, ελληνική φέτα, φρέσκια ρίγανη & εξτρα παρθένο
+              ελαιόλαδο</span
+            ><span class="price">8.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Κρητική, Κρητική σαλάτα με κριθινο παξιμάδι, ντοματίνια,
+              αγγουράκι Κνωσσού, κρίταμο, κρεμμύδι κόκκινο, πατάτα βραστή,
+              φρέσκο αυγό BIO, ξύγαλο, ρίγανη & έξτρα παρθένο ελαιόλαδο</span
+            ><span class="price">9.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Σαλάτα Sergiani Seaside, Φρέσκια πράσινη σαλάτα με ψητά ροδάκινα,
+              κατσικίσιο τυρί, αντιοξειδωτικό ρόδι και παστέλι πάπρικας</span
+            ><span class="price">10.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Χόρτα εποχής με έξτρα παρθένο ελαιόλαδο</span
+            ><span class="price">5.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Ψάρι Ημέρας -->
+      <section id="catch" class="menu-container">
+        <h2 class="header">Το καλάθι του Ψαρά</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Μικρο ψάρι ημέρας τηγανητό - Μαρίδα / σαρδέλα / γαύρο /
+              αθερίνα</span
+            ><span class="price">8.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Φρέσκο ψάρι ημέρας σχάρας, Συνοδεύεται με χόρτα εποχής & πατάτα
+              βραστή</span
+            ><span class="price">50.00–60.00 / κιλό</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Από τη σχάρα μας -->
+      <section id="grill" class="menu-container">
+        <h2 class="header">Από τη σχάρα μας</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Μπιφτέκια μοσχαρίσια γεμιστά μπιφτέκι από εξαιρετικής ποιότητας
+              100% μοσχαρίσιο κρέας γεμιστό με τυρί, συνοδευμένο με χειροποίητο
+              πιτάκι & πατάτες σκαφτές</span
+            ><span class="price">14.50</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Χοιρινή μπριζόλα (800–900 γρ.) Εξαιρετικής ποιότητας χοιρινό,
+              συνοδευμένο με καλαμπόκι σχάρας, μουστάρδα ντιζόν, χειροποίητο
+              πιτάκι & πατάτες σκαφτές</span
+            ><span class="price">18.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Tagliata (300 γρ.) Μοσχαρίσιο φιλέτο συνοδευμένο με σπαράγγια,
+              σάλτσα πιπεριού & τσιμιτσούρι</span
+            ><span class="price">32.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Κοτόπουλο «Κοντοσούβλι» (600–700 γρ.)Κοτόπουλο περασμένο σε
+              βελόνη, μαριναρισμένο με ξιόγαλο, πάπρικα, συνοδευμένο με σκαφτές
+              πατάτες</span
+            ><span class="price">17.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Τόνος σχάρας (300 γρ.) Φιλέτο τόνου στη σχάρα με σάλτσα
+              μοσχολέμονο & σωταρισμένα λαχανικά</span
+            ><span class="price">21.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Φαγγρί σχάρας, Φιλέτο φαγγρί με ταιριαστά χόρτα, πουρέ
+              μανιταρόριζας / καρότου και σούπα από ντοματίνια Ιεράπετρας</span
+            ><span class="price">21.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!--Όστρακα & Οστρακοειδή -->
+      <section id="shellfish" class="menu-container">
+        <h2 class="header">Όστρακα & Οστρακοειδή</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item">Φρέσκα στρείδια</span
+            ><span class="price">4.50 / τεμ.</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Αστακός σχάρας με βούτυρο μυρωδικών / ζυμαρικά</span
+            ><span class="price">100.00 / κιλό</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Κολοχτύπα σχάρας με βούτυρο πάπρικας / ζυμαρικά </span
+            ><span class="price">100.00 / κιλό</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Γαρίδες JUMBO σχάρας με βούτυρο</span
+            ><span class="price">90.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Μαρινάτα -->
+      <section id="marinated" class="menu-container">
+        <h2 class="header">Μαρινάτα</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item">Γαύρος μαρινάτος</span
+            ><span class="price">6.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Λαβράκι σεβίτσε</span
+            ><span class="price">14.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Ταρτάρ τόνου</span
+            ><span class="price">16.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Μαγειρευτά -->
+      <section id="home" class="menu-container">
+        <h2 class="header">Μαγειρευτά</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item">Ρωτήστε μας για τα πιάτα ημέρας</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Μουσακάς, Παραδοσιακός μουσακάς με μελιτζάνα, κολοκύθι και
+              μοσχαρίσιο κιμά</span
+            ><span class="price">12.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Παιδικό Μενού -->
+      <section id="kids" class="menu-container">
+        <h2 class="header">Παιδικό Μενού</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Μακαρόνια με βούτυρο / ντομάτα / ελαιόλαδο</span
+            ><span class="price">4.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Χειροποίητες μπουκιές κοτόπουλου</span
+            ><span class="price">7.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Χειροποίητες μπουκιές ψαριού</span
+            ><span class="price">7.00</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Γλυκά -->
+      <section id="desserts" class="menu-container">
+        <h2 class="header">Γλυκά</h2>
+        <ul class="menu-list">
+          <li class="menu-row">
+            <span class="menu-item"
+              >Σοκολατόπιτα με γλάσο bitter σοκολάτας και σάλτσα Dulce de leche </span
+            ><span class="price">11.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item"
+              >Πορτοκαλόπιτα παραδοσιακή με παγωτό γιαούρτι και ξύσμα
+              σοκολάτας</span
+            ><span class="price">9.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Παγωτό ανά μπάλα</span
+            ><span class="price">2.00</span>
+          </li>
+          <li class="menu-row">
+            <span class="menu-item">Γλυκό ημέρας</span
+            ><span class="price">8.50</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="contacts-wrap">
+        <div class="contacts">
+          <div class="footer-logo">
+            <img src="images/logo.png" alt="Λογότυπο" loading="lazy" />
+          </div>
+
+          <h3>ΕΠΙΚΟΙΝΩΝΙΑ</h3>
+          <ul>
+            <li>
+              <a href="tel:+302841026822">+30 28410 26822</a>
+            </li>
+          </ul>
+          <button class="book-now-footer">ΚΑΝΤΕ ΚΡΑΤΗΣΗ</button>
+        </div>
+        <!-- prettier-ignore -->
+        <div class="social-media">
+          
+          <a class="ig" href="https://www.instagram.com/sergianiseaside/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+  <img src="images/icons8-instagram-96.png" alt="Instagram" width="30" height="30" />
+</a>
+
+
+           <a href="https://www.facebook.com/sergianiseaside/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg class="social fb" fill="#ffffff" width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"
+            /></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-section2">
+        <div class="opening-hours">
+          <h3>ΩΡΑΡΙΟ ΚΟΥΖΙΝΑΣ</h3>
+          <p>Δευτέρα - Σάββατο: 13:00 – 23:00</p>
+        </div>
+
+        <div class="address">
+          <h3>ΔΙΕΥΘΥΝΣΗ</h3>
+          <p class="address-p">Ακτή Κουνδούρου 6, Αγ. Νικόλαος 721 00</p>
+          <p class="address-seafront">Παραλιακό μέτωπο Αγίου Νικολάου</p>
+        </div>
+      </div>
+
+      <div class="links">
+        <h3>ΠΛΟΗΓΗΣΗ ΙΣΤΟΤΟΠΟΥ</h3>
+        <ul>
+          <li><a href="drinks.html">ΛΙΣΤΑ ΠΟΤΩΝ</a></li>
+          <li><a href="menu.html">ΜΕΝΟΥ ΦΑΓΗΤΟΥ</a></li>
+          <li><a href="wine-list.html">ΛΙΣΤΑ ΚΡΑΣΙΩΝ</a></li>
+          <li><a href="about.html">ΣΧΕΤΙΚΑ</a></li>
+          <li><a href="index.html">ΑΡΧΙΚΗ</a></li>
+        </ul>
+      </div>
+      <!-- prettier-ignore -->
+      <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.577970887243!2d25.715946776519186!3d35.192069872748945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149081cb47e87865%3A0xe2cbd653fac03f95!2sSergiani%20Seaside!5e0!3m2!1sel!2sgr!4v1755708533433!5m2!1sel!2sgr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Χάρτης προς Sergiani Seaside"></iframe></div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="to-top" aria-label="Επιστροφή στην κορυφή">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.4)" />
+        <path
+          d="M12 16V8m0 0l-4 4m4-4l4 4"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-  <meta charset="UTF-8" />
+<html lang="el">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,29 +16,34 @@
       href="https://fonts.googleapis.com/css2?family=Bellefair&display=swap"
       rel="stylesheet"
     />
-    <title>WINE LIST</title>
+    <title>ΛΙΣΤΑ ΚΡΑΣΙΩΝ</title>
   </head>
 
   <body>
     <!-- HERO -->
     <header class="hero">
-      <nav aria-label="Primary">
+      <nav aria-label="Κύρια πλοήγηση">
         <ul>
-          <li><a href="index.html" aria-current="page">HOME</a></li>
+          <li><a href="index-el.html" aria-current="page">ΑΡΧΙΚΗ</a></li>
           <li>
-            <a href="#">MENU &#9660;</a>
+            <a>ΜΕΝΟΥ &#9660;</a>
             <ul class="drop-down">
-              <li><a href="food-menu.html">FOOD</a></li>
-              <li><a href="wine-list.html">WINES</a></li>
-              <li><a href="drinks.html">DRINKS</a></li>
+              <li><a href="food-menu-el.html">ΦΑΓΗΤΑ</a></li>
+              <li><a href="wine-list-el.html">ΚΡΑΣΙΑ</a></li>
+              <li><a href="drinks-el.html">ΠΟΤΑ</a></li>
             </ul>
           </li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="#footer">CONTACT</a></li>
-          <!-- LANGUAGE SWITCH -->
+
+          <li><a href="about-el.html">ΣΧΕΤΙΚΑ</a></li>
+          <li><a href="#footer">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
           <li class="lang-switch">
             <a href="wine-list.html">EN</a>
             <a href="wine-list-el.html">GR</a>
+          </li>
+          <!-- LANGUAGE SWITCH -->
+          <li class="lang-switch">
+            <a href="index.html">EN</a>
+            <a href="index-el.html">GR</a>
           </li>
         </ul>
       </nav>
@@ -55,99 +60,91 @@
           sizes="(max-width: 768px) 100vw,
          (max-width: 1200px) 50vw,
          1000px"
-          alt="Rose Wine"
+          alt="Ροζέ κρασί"
           loading="lazy"
         />
       </div>
       <div class="black-layer"></div>
       <div class="typography">
-        <h1>WINE LIST</h1>
+        <h1>ΛΙΣΤΑ ΚΡΑΣΙΩΝ</h1>
       </div>
     </header>
+
     <main class="menu-main">
       <!-- WINES NAVIGATION -->
-      <nav class="food-nav">
+      <nav class="food-nav" aria-label="Πλοήγηση λίστας κρασιών">
         <ul>
-          <li><a href="#white-whines-glass">White Wines per Glass</a></li>
+          <li><a href="#white-whines-glass">Λευκά κρασιά ποτηριού</a></li>
+          <li><a href="#white-wines-bottle1">Λευκά κρασιά φιάλη (750ml)</a></li>
+          <li><a href="#white-wines-bottle">Λευκά κρασιά φιάλη (750ml)</a></li>
           <li>
-            <a href="#white-wines-bottle1">White Wines by Bottle (750ml)</a>
+            <a href="#premium-white-bottle">Premium λευκά φιάλη (750ml)</a>
           </li>
+          <li><a href="#magnum-bottles">Magnum φιάλες (1,5L)</a></li>
+          <li><a href="#rose-wines-glass">Ροζέ κρασιά ποτηριού</a></li>
+          <li><a href="#rose-wines-bottle">Ροζέ κρασιά φιάλη (750ml)</a></li>
           <li>
-            <a href="#white-wines-bottle">White Wines by Bottle (750ml)</a>
+            <a href="#premium-rose-bottles">Premium ροζέ φιάλες (750ml)</a>
           </li>
+          <li><a href="#magnum-rose">Magnum ροζέ (1,5L)</a></li>
+          <li><a href="#red-wines-glass">Ερυθρά κρασιά ποτηριού</a></li>
+          <li><a href="#red-wines-bottle">Ερυθρά κρασιά φιάλη (750ml)</a></li>
           <li>
-            <a href="#premium-white-bottle"
-              >Premium White Wines by Bottle (750ml)</a
-            >
+            <a href="#premium-red-bottle">Premium ερυθρά φιάλη (750ml)</a>
           </li>
-          <li><a href="#magnum-bottles">Magnum Bottles (1.5L)</a></li>
-          <li><a href="#rose-wines-glass">Rosé Wines per Glass</a></li>
-          <li><a href="#rose-wines-bottle">Rosé Wines by Bottle (750ml)</a></li>
-          <li>
-            <a href="#premium-rose-bottles"
-              >Premium Rosé Wine Bottles (750ml)</a
-            >
-          </li>
-          <li><a href="#magnum-rose">Magnum Rosé (1.5L)</a></li>
-          <li><a href="#red-wines-glass">Red Wines per Glass</a></li>
-          <li><a href="#red-wines-bottle">Red Wines by Bottle (750ml)</a></li>
-          <li>
-            <a href="#premium-red-bottle"
-              >Premium Red Wines by Bottle (750ml)</a
-            >
-          </li>
-          <li><a href="#champagnes–white">Champagnes – White (750ml)</a></li>
-          <li><a href="#champagnes–rose">Champagnes – Rosé (750ml)</a></li>
-          <li><a href="#sweets">Semi-Sweet &amp; Sweet Wines</a></li>
-          <li><a href="#sparkling">Sparkling Wines</a></li>
+          <li><a href="#champagnes–white">Σαμπάνιες – Λευκές (750ml)</a></li>
+          <li><a href="#champagnes–rose">Σαμπάνιες – Ροζέ (750ml)</a></li>
+          <li><a href="#sweets">Ημίγλυκα & γλυκά κρασιά</a></li>
+          <li><a href="#sparkling">Αφρώδη κρασιά</a></li>
         </ul>
       </nav>
 
-      <!-- White Wines per Glass1 -->
+      <!-- White Wines per Glass -->
       <section id="white-whines-glass" class="menu-container">
-        <h2 class="header">White Wines per Glass</h2>
+        <h2 class="header">Λευκά κρασιά ποτηριού</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">Cavino Pandora</span
             ><span class="price">6.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Costas Lazaridis Estate, Amethystos</span
+            <span class="menu-item">Κτήμα Κώστα Λαζαρίδη, Amethystos</span
             ><span class="price">7.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate</span
+            <span class="menu-item">Κτήμα Λυραράκη</span
             ><span class="price">6.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Southern Ocean (New Zealand)</span
+            <span class="menu-item">Southern Ocean (Νέα Ζηλανδία)</span
             ><span class="price">7.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- white Wines by Bottle1 -->
+      <!-- White Wines by Bottle 1 -->
       <section id="white-wines-bottle1" class="menu-container">
-        <h2 class="header">White Wines by Bottle (750ml)</h2>
+        <h2 class="header">Λευκά κρασιά φιάλη (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">Cavino Pandora</span
             ><span class="price">20.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Costas Lazaridis Estate, Amethystos</span
+            <span class="menu-item">Κτήμα Κώστα Λαζαρίδη, Amethystos</span
             ><span class="price">32.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Paterianakis Estate, Melissinos</span
+            <span class="menu-item">Κτήμα Πατεριανάκη, Melissinos</span
             ><span class="price">35.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate, Psarades</span
+            <span class="menu-item">Κτήμα Λυραράκη, Psarades</span
             ><span class="price">32.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Daskalakis–Silva Winery, Psithyros</span
+            <span class="menu-item"
+              >Οινοποιείο Δασκαλάκη – Silva, Psithyros</span
             ><span class="price">28.00</span>
           </li>
           <li class="menu-row">
@@ -155,103 +152,104 @@
             ><span class="price">37.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Argyros Estate, Santorini</span
+            <span class="menu-item">Κτήμα Αργυρού, Santorini</span
             ><span class="price">68.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Santo Wines Winery, Nykteri Reserve</span
+            <span class="menu-item">Santo Wines, Nykteri Reserve</span
             ><span class="price">65.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Gavala Winery, Vilana</span
+            <span class="menu-item">Οινοποιείο Γαβαλά, Vilana</span
             ><span class="price">24.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Hatzimichalis Estate, White Bottle</span
+            <span class="menu-item">Κτήμα Χατζημιχάλη, White Bottle</span
             ><span class="price">35.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Karavitakis Winery, Elia</span
+            <span class="menu-item">Οινοποιείο Καραϊτάκης, Elia</span
             ><span class="price">44.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Gerovasiliou Estate</span
+            <span class="menu-item">Κτήμα Γεροβασιλείου</span
             ><span class="price">45.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Gerovasiliou Estate</span
+            <span class="menu-item">Κτήμα Γεροβασιλείου</span
             ><span class="price">53.00</span>
           </li>
           <li class="menu-row">
             <span class="menu-item"
-              >Costas Lazaridis Estate, Domaine C. Lazaridi</span
+              >Κτήμα Κώστα Λαζαρίδη, Domaine C. Lazaridi</span
             ><span class="price">45.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- white Wines by Bottle -->
+      <!-- White Wines by Bottle 2 -->
       <section id="white-wines-bottle" class="menu-container">
-        <h2 class="header">White Wines by Bottle (750ml)</h2>
+        <h2 class="header">Λευκά κρασιά φιάλη (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Hatzimichalis Estate, Kapnias</span
+            <span class="menu-item">Κτήμα Χατζημιχάλη, Kapnias</span
             ><span class="price">57.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Efrosini Winery, Sophia</span
+            <span class="menu-item">Οινοποιείο Ευφροσύνης, Sophia</span
             ><span class="price empty"></span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate</span
+            <span class="menu-item">Κτήμα Λυραράκη</span
             ><span class="price">24.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Southern Ocean (New Zealand)</span
+            <span class="menu-item">Southern Ocean (Νέα Ζηλανδία)</span
             ><span class="price">35.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Vassaltis Winery, Vassaltis Nassitis</span
+            <span class="menu-item"
+              >Οινοποιείο Vassaltis, Vassaltis Nassitis</span
             ><span class="price">57.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Douloufakis Winery, Aspros Lagos</span
+            <span class="menu-item">Οινοποιείο Δουλουφάκη, Άσπρος Λαγός</span
             ><span class="price">43.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Iliana Malihin Winery</span
+            <span class="menu-item">Οινοποιείο Ιλιάνα Μαλιχίν</span
             ><span class="price">35.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Manousakis Winery, Nostos</span
+            <span class="menu-item">Οινοποιείο Μανουσάκη, Nostos</span
             ><span class="price">60.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Akra Chryssos, Santorini</span
+            <span class="menu-item">Άκρα Χρυσός, Santorini</span
             ><span class="price">67.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Tselepos Estate, Blanc de Gris</span
+            <span class="menu-item">Κτήμα Τσέλεπου, Blanc de Gris</span
             ><span class="price">30.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Hatzimichalis Estate, Houlevena</span
+            <span class="menu-item">Κτήμα Χατζημιχάλη, Houlevena</span
             ><span class="price">28.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Hatzimichalis Estate, Kryovrysi</span
+            <span class="menu-item">Κτήμα Χατζημιχάλη, Kryovrysi</span
             ><span class="price">45.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Gerovasiliou Estate</span
+            <span class="menu-item">Κτήμα Γεροβασιλείου</span
             ><span class="price">55.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Navitas Winery, 52 Peaks</span
+            <span class="menu-item">Οινοποιείο Navitas, 52 Peaks</span
             ><span class="price">53.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Maragakis Winery, Sohoro</span
+            <span class="menu-item">Οινοποιείο Μαραγκάκη, Sohoro</span
             ><span class="price">50.00</span>
           </li>
           <li class="menu-row">
@@ -261,16 +259,16 @@
         </ul>
       </section>
 
-      <!-- Premium White Wines by Bottle -->
+      <!-- Premium White -->
       <section id="premium-white-bottle" class="menu-container">
-        <h2 class="header">Premium White Wines by Bottle (750ml)</h2>
+        <h2 class="header">Premium λευκά φιάλη (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Gaia Estate, Thalassitis Vithismenos</span
+            <span class="menu-item">Κτήμα Γαία, Thalassitis Vithismenos</span
             ><span class="price">450.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Santo Wines Winery, Irini 2016</span
+            <span class="menu-item">Santo Wines, Irini 2016</span
             ><span class="price">130.00</span>
           </li>
           <li class="menu-row">
@@ -279,16 +277,17 @@
           </li>
           <li class="menu-row">
             <span class="menu-item"
-              >Hatzidakis Winery, Assyrtiko de Louros 2015</span
+              >Οινοποιείο Χατζηδάκη, Assyrtiko de Louros 2015</span
             ><span class="price">480.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Karamolegos Artemis Winery, Pyritis</span
+            <span class="menu-item"
+              >Οινοποιείο Καραμολέγκος – Artemis, Pyritis</span
             ><span class="price">89.00</span>
           </li>
           <li class="menu-row">
             <span class="menu-item"
-              >Thymiopoulos Vineyards, Blanc de Coteaux Amphora</span
+              >Αμπελώνες Θυμιόπουλου, Blanc de Coteaux Amphora</span
             ><span class="price empty"></span>
           </li>
         </ul>
@@ -296,10 +295,10 @@
 
       <!-- Magnum Bottles -->
       <section id="magnum-bottles" class="menu-container">
-        <h2 class="header">Magnum Bottles (1.5L)</h2>
+        <h2 class="header">Magnum φιάλες (1,5L)</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Katsaros Estate</span
+            <span class="menu-item">Κτήμα Κατσαρού</span
             ><span class="price">100.00</span>
           </li>
           <li class="menu-row">
@@ -309,12 +308,12 @@
         </ul>
       </section>
 
-      <!-- Rosé Wines per Glass -->
+      <!-- Rosé per Glass -->
       <section id="rose-wines-glass" class="menu-container">
-        <h2 class="header">Rosé Wines per Glass</h2>
+        <h2 class="header">Ροζέ κρασιά ποτηριού</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate</span
+            <span class="menu-item">Κτήμα Λυραράκη</span
             ><span class="price">7.00</span>
           </li>
           <li class="menu-row">
@@ -322,18 +321,18 @@
             ><span class="price">6.50</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Diamantakis Winery, Prinos</span
+            <span class="menu-item">Οινοποιείο Διαμαντάκη, Prinos</span
             ><span class="price">5.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- Rosé Wine Bottles -->
+      <!-- Rosé Bottles -->
       <section id="rose-wines-bottle" class="menu-container">
-        <h2 class="header">Rosé Wines by Bottle (750ml)</h2>
+        <h2 class="header">Ροζέ κρασιά φιάλη (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate</span
+            <span class="menu-item">Κτήμα Λυραράκη</span
             ><span class="price">24.00</span>
           </li>
           <li class="menu-row">
@@ -341,19 +340,20 @@
             ><span class="price">23.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Dryopi Estate, Dryopi</span
+            <span class="menu-item">Κτήμα Δρυόπη, Dryopi</span
             ><span class="price">25.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Winery, Liatikos Kedros</span
+            <span class="menu-item">Οινοποιείο Λυραράκη, Liatikos Kedros</span
             ><span class="price">40.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Thymiopoulos Winery, Rosé de Xinomavro</span
+            <span class="menu-item"
+              >Οινοποιείο Θυμιόπουλου, Rosé de Xinomavro</span
             ><span class="price">32.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Avantis Estate, Lenga Pink</span
+            <span class="menu-item">Κτήμα Αβαντίς, Lenga Pink</span
             ><span class="price">30.00</span>
           </li>
           <li class="menu-row">
@@ -361,45 +361,44 @@
             ><span class="price">39.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item"
-              >Nico Lazaridi Wines, Nicos Lazaridis Evil Eye</span
+            <span class="menu-item">Nico Lazaridi, Evil Eye</span
             ><span class="price">60.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Diamantakis Winery, Prinos</span
+            <span class="menu-item">Οινοποιείο Διαμαντάκη, Prinos</span
             ><span class="price">20.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Moropoulos Winery</span
+            <span class="menu-item">Οινοποιείο Moropoulos</span
             ><span class="price">26.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Iliana Malihin Winery</span
+            <span class="menu-item">Οινοποιείο Ιλιάνα Μαλιχίν</span
             ><span class="price">36.00</span>
           </li>
           <li class="menu-row">
             <span class="menu-item"
-              >Costas Lazaridis Estate, Domaine C. Lazaridi</span
+              >Κτήμα Κώστα Λαζαρίδη, Domaine C. Lazaridi</span
             ><span class="price">45.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Ktima Kir-Yianni, L’Esprit du Lac</span
+            <span class="menu-item">Κτήμα Κυρ-Γιάννη, L’Esprit du Lac</span
             ><span class="price">34.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Zacharioudakis Estate, Victoria</span
+            <span class="menu-item">Κτήμα Ζαχαριουδάκη, Victoria</span
             ><span class="price">35.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Chateau Miraval, Miraval Rosé</span
+            <span class="menu-item">Château Miraval, Miraval Rosé</span
             ><span class="price">69.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- Premium Rosé Wine Bottles -->
+      <!-- Premium Rosé -->
       <section id="premium-rose-bottles" class="menu-container">
-        <h2 class="header">Premium Rosé Wine Bottles (750ml)</h2>
+        <h2 class="header">Premium ροζέ φιάλες (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">La Tour Melas, Silphium Cuvée</span
@@ -414,7 +413,7 @@
 
       <!-- Magnum Rosé -->
       <section id="magnum-rose" class="menu-container">
-        <h2 class="header">Magnum Rosé (1.5L)</h2>
+        <h2 class="header">Magnum ροζέ (1,5L)</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">La Tour Melas, Idylle d’Achinos</span
@@ -422,57 +421,57 @@
           </li>
           <li class="menu-row">
             <span class="menu-item"
-              >Costas Lazaridis Estate, Domaine C. Lazaridi</span
+              >Κτήμα Κώστα Λαζαρίδη, Domaine C. Lazaridi</span
             ><span class="price">95.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- Red Wines per glass -->
+      <!-- Red per Glass -->
       <section id="red-wines-glass" class="menu-container">
-        <h2 class="header">Red Wines per Glass</h2>
+        <h2 class="header">Ερυθρά κρασιά ποτηριού</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate, Queen</span
+            <span class="menu-item">Κτήμα Λυραράκη, Queen</span
             ><span class="price">6.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- Red Wines by Bottle -->
+      <!-- Red by Bottle -->
       <section id="red-wines-bottle" class="menu-container">
-        <h2 class="header">Red Wines by Bottle (750ml)</h2>
+        <h2 class="header">Ερυθρά κρασιά φιάλη (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
-            <span class="menu-item">Lyrarakis Estate, Queen</span
+            <span class="menu-item">Κτήμα Λυραράκη, Queen</span
             ><span class="price">22.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Hatzimichalis Estate</span
+            <span class="menu-item">Κτήμα Χατζημιχάλη</span
             ><span class="price">39.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Ktima Vivlia Chora</span
+            <span class="menu-item">Κτήμα Βιβλία Χώρα</span
             ><span class="price">45.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Hatzimichalis Estate, Giataki</span
+            <span class="menu-item">Κτήμα Χατζημιχάλη, Giataki</span
             ><span class="price">38.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Alfa Estate</span
+            <span class="menu-item">Κτήμα Άλφα</span
             ><span class="price">57.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Zafirakis Estate</span
+            <span class="menu-item">Κτήμα Ζαφειράκη</span
             ><span class="price">50.00</span>
           </li>
         </ul>
       </section>
 
-      <!-- Premium Red Wines by Bottle -->
+      <!-- Premium Red -->
       <section id="premium-red-bottle" class="menu-container">
-        <h2 class="header">Premium Red Wines by Bottle (750ml)</h2>
+        <h2 class="header">Premium ερυθρά φιάλη (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">La Tour Melas, Old Vines</span
@@ -483,7 +482,7 @@
 
       <!-- Champagnes – White -->
       <section id="champagnes–white" class="menu-container">
-        <h2 class="header">Champagnes – White (750ml)</h2>
+        <h2 class="header">Σαμπάνιες – Λευκές (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">Moët &amp; Chandon Brut Imperial</span
@@ -506,7 +505,7 @@
 
       <!-- Champagnes – Rosé -->
       <section id="champagnes–rose" class="menu-container">
-        <h2 class="header">Champagnes – Rosé (750ml)</h2>
+        <h2 class="header">Σαμπάνιες – Ροζέ (750ml)</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">Moët &amp; Chandon Imperial Rosé</span
@@ -523,16 +522,16 @@
         </ul>
       </section>
 
-      <!-- Semi-Sweet & Sweet Wines -->
+      <!-- Semi-Sweet & Sweet -->
       <section id="sweets" class="menu-container">
-        <h2 class="header">Semi-Sweet &amp; Sweet Wines</h2>
+        <h2 class="header">Ημίγλυκα &amp; γλυκά κρασιά</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">Life Choice</span
             ><span class="price">5.00 | 20.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">EOS Samos, Vin Deux</span
+            <span class="menu-item">ΕΟΣ Σάμου, Vin Deux</span
             ><span class="price">5.50 | 20.00</span>
           </li>
           <li class="menu-row">
@@ -542,27 +541,27 @@
         </ul>
       </section>
 
-      <!-- Sparkling Wines -->
+      <!-- Sparkling -->
       <section id="sparkling" class="menu-container">
-        <h2 class="header">Sparkling Wines</h2>
+        <h2 class="header">Αφρώδη κρασιά</h2>
         <ul class="menu-list">
           <li class="menu-row">
             <span class="menu-item">Prosecco</span
             ><span class="price">9.00 | 49.00</span>
           </li>
           <li class="menu-row">
-            <span class="menu-item">Ghess Pieropan, Corniva 750ml (Italy)</span
+            <span class="menu-item">Ghess Pieropan, Corniva 750ml (Ιταλία)</span
             ><span class="price">53.00</span>
           </li>
           <li class="menu-row">
             <span class="menu-item"
-              >Douloufakis Winery, Vidiano Sparkling 750ml (Crete)</span
+              >Οινοποιείο Δουλουφάκη, Αφρώδες Βιδιανό 750ml (Κρήτη)</span
             ><span class="price">48.00</span>
           </li>
           <li class="menu-row">
             <span class="menu-item"
               >Raventós i Blanc, Blanc de Blancs Brut, Macabeu 750ml
-              (Spain)</span
+              (Ισπανία)</span
             ><span class="price">57.00</span>
           </li>
         </ul>
@@ -574,59 +573,66 @@
       <div class="contacts-wrap">
         <div class="contacts">
           <div class="footer-logo">
-            <img src="images/logo.png" alt="logo" />
+            <img src="images/logo.png" alt="Λογότυπο" />
           </div>
 
-          <h3>CONTACT</h3>
+          <h3>ΕΠΙΚΟΙΝΩΝΙΑ</h3>
           <ul>
-            <li>
-              <a href="tel:+302841026822">+30 28410 26822</a>
-            </li>
+            <li><a href="tel:+302841026822">+30 28410 26822</a></li>
           </ul>
-          <button class="book-now-footer">BOOK NOW</button>
+          <button class="book-now-footer">ΚΑΝΤΕ ΚΡΑΤΗΣΗ</button>
         </div>
         <!-- prettier-ignore -->
         <div class="social-media">
-          
           <a class="ig" href="https://www.instagram.com/sergianiseaside/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-  <img src="images/icons8-instagram-96.png" alt="Instagram" width="30" height="30" />
-</a>
-
-
-           <a href="https://www.facebook.com/sergianiseaside/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg class="social fb" fill="#ffffff" width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"
-            /></svg></a>
+            <img src="images/icons8-instagram-96.png" alt="Instagram" width="30" height="30" />
+          </a>
+          <a href="https://www.facebook.com/sergianiseaside/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg class="social fb" fill="#ffffff" width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"/></svg>
+          </a>
         </div>
       </div>
 
       <div class="footer-section2">
         <div class="opening-hours">
-          <h3>KITCHEN OPENING HOURS</h3>
-          <p>Monday - Saturday: 13:00 – 23:00</p>
+          <h3>ΩΡΑΡΙΟ ΚΟΥΖΙΝΑΣ</h3>
+          <p>Δευτέρα - Σάββατο: 13:00 – 23:00</p>
         </div>
 
         <div class="address">
-          <h3>ADDRESS</h3>
-          <p class="address-p">Akti Koundourou 6, Ag. Nikolaos 721 00</p>
-          <p class="address-seafront">Seafront of Agios Nikolaos</p>
+          <h3>ΔΙΕΥΘΥΝΣΗ</h3>
+          <p class="address-p">Ακτή Κουνδούρου 6, Αγ. Νικόλαος 721 00</p>
+          <p class="address-seafront">Παραλιακό μέτωπο Αγίου Νικολάου</p>
         </div>
       </div>
 
       <div class="links">
-        <h3>SITE NAVIGATION</h3>
+        <h3>ΠΛΟΗΓΗΣΗ ΙΣΤΟΤΟΠΟΥ</h3>
         <ul>
-          <li><a href="drinks.html">DRINKS LIST</a></li>
-          <li><a href="food-menu.html">FOOD MENU</a></li>
-          <li><a href="wine-list.html">WINE LIST</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="index.html">HOME</a></li>
+          <li><a href="drinks.html">ΛΙΣΤΑ ΠΟΤΩΝ</a></li>
+          <li><a href="menu.html">ΜΕΝΟΥ ΦΑΓΗΤΟΥ</a></li>
+          <li><a href="wine-list.html">ΛΙΣΤΑ ΚΡΑΣΙΩΝ</a></li>
+          <li><a href="about.html">ΣΧΕΤΙΚΑ</a></li>
+          <li><a href="index.html">ΑΡΧΙΚΗ</a></li>
         </ul>
       </div>
-      <!-- prettier-ignore -->
-      <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.577970887243!2d25.715946776519186!3d35.192069872748945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149081cb47e87865%3A0xe2cbd653fac03f95!2sSergiani%20Seaside!5e0!3m2!1sen!2sgr!4v1755708533433!5m2!1sen!2sgr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Sergiani Seaside"></iframe></div>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.577970887243!2d25.715946776519186!3d35.192069872748945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149081cb47e87865%3A0xe2cbd653fac03f95!2sSergiani%20Seaside!5e0!3m2!1sel!2sgr!4v1755708533433!5m2!1sel!2sgr"
+          width="400"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Χάρτης προς Sergiani Seaside"
+        ></iframe>
+      </div>
     </footer>
 
     <!-- BACK TO TOP BUTTON -->
-    <button class="to-top" aria-label="Back to top">
+    <button class="to-top" aria-label="Επιστροφή στην κορυφή">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.4)" />
         <path

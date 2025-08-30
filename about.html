@@ -26,14 +26,18 @@
           <li>
             <a href="#">MENU &#9660;</a>
             <ul class="drop-down">
-              <li><a href="food.html">FOOD</a></li>
+              <li><a href="food-menu.html">FOOD</a></li>
               <li><a href="wine-list.html">WINES</a></li>
               <li><a href="drinks.html">DRINKS</a></li>
             </ul>
           </li>
-
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="#footer">CONTACT</a></li>
+          <!-- LANGUAGE SWITCH -->
+          <li class="lang-switch">
+            <a href="about.html">EN</a>
+            <a href="about-el.html">GR</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -54,6 +58,7 @@
          (max-width: 1200px) 50vw,
          1000px"
             alt="About us"
+            loading="lazy"
           />
           <div class="story-typography">
             <h1>OUR STORY</h1>
@@ -100,6 +105,7 @@
          (max-width: 1200px) 50vw,
          1000px"
             alt="Our team"
+            loading="lazy"
           />
         </div>
       </div>
@@ -110,7 +116,7 @@
       <div class="contacts-wrap">
         <div class="contacts">
           <div class="footer-logo">
-            <img src="images/logo.png" alt="logo" />
+            <img src="images/logo.png" alt="logo" loading="lazy" />
           </div>
 
           <h3>CONTACT</h3>
@@ -151,7 +157,7 @@
         <h3>SITE NAVIGATION</h3>
         <ul>
           <li><a href="drinks.html">DRINKS LIST</a></li>
-          <li><a href="menu.html">FOOD MENU</a></li>
+          <li><a href="food-menu.html">FOOD MENU</a></li>
           <li><a href="wine-list.html">WINE LIST</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="index.html">HOME</a></li>
@@ -160,5 +166,21 @@
       <!-- prettier-ignore -->
       <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.577970887243!2d25.715946776519186!3d35.192069872748945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149081cb47e87865%3A0xe2cbd653fac03f95!2sSergiani%20Seaside!5e0!3m2!1sen!2sgr!4v1755708533433!5m2!1sen!2sgr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to Sergiani Seaside"></iframe></div>
     </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="to-top" aria-label="Back to top">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.4)" />
+        <path
+          d="M12 16V8m0 0l-4 4m4-4l4 4"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <script src="script.js"></script>
   </body>
 </html>
