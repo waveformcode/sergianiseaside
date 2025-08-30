@@ -31,13 +31,20 @@ nav {
   height: 50px;
   align-content: center;
   background-color: rgba(246, 242, 236, 0.245);
-  z-index: 3;
+  z-index: 3000;
 }
 
 nav ul {
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  width: 100%;
+  gap: 14px;
+  padding: 0 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 nav li {
@@ -54,6 +61,7 @@ nav a {
 
 .lang-switch a {
   padding-left: 5px;
+  flex-wrap: nowrap;
 }
 
 /*==== DROPDOWN ====*/
@@ -61,17 +69,19 @@ nav a {
   display: none;
 }
 
-ul li:focus-within ul.drop-down {
+ul li ul.drop-down li {
   display: block;
 }
 
-.drop-down li {
-  padding: 5px;
+.drop-down li a {
+  display: block;
+  color: black;
+  padding: 10px;
 }
 
 .drop-down li:hover {
-  background-color: rgba(246, 242, 236, 0.931);
-  border-radius: 20px;
+  background-color: rgba(246, 242, 236, 0.6);
+  border-radius: 10px;
 }
 
 ul li ul.drop-down {
@@ -82,19 +92,13 @@ ul li ul.drop-down {
   z-index: 999;
   padding: 10px;
   display: none;
+
   border-radius: 20px;
 }
 
 ul li:hover ul.drop-down {
   display: block;
   text-align: center;
-  padding-top: 10px;
-}
-
-.drop-down li a {
-  display: block;
-  margin-top: 10px;
-  color: black;
 }
 
 /*==== HERO ====*/
@@ -776,6 +780,14 @@ iframe {
     height: 700px;
     object-fit: cover;
   }
+
+  .hero nav ul {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    justify-content: space-between;
+  }
+
   /*==== INTRO MEDIA ====*/
   .intro-paragraph {
     width: 90%;
