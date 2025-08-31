@@ -903,8 +903,6 @@ iframe {
     padding: 14px 16px;
     flex-direction: column;
     gap: 8px;
-    text-align: center;
-    justify-content: center;
   }
 
   /* όταν το nav έχει .open, τότε φαίνεται το menu */
@@ -931,7 +929,7 @@ iframe {
     background: transparent;
     border-radius: 0;
     padding: 0 0 6px 10px;
-    text-align: center;
+    text-align: left;
   }
 
   /* απενεργοποίηση hover-open στο mobile */
