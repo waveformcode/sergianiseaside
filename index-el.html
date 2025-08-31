@@ -25,7 +25,7 @@
       <nav aria-label="Κύρια πλοήγηση">
         <ul>
           <li><a href="index-el.html" aria-current="page">ΑΡΧΙΚΗ</a></li>
-          <li>
+          <li class="has-submenu">
             <a href="#">ΜΕΝΟΥ &#9660;</a>
             <ul class="drop-down">
               <li><a href="food-menu-el.html">ΦΑΓΗΤΑ</a></li>
@@ -250,9 +250,7 @@
           <a class="ig" href="https://www.instagram.com/sergianiseaside/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
   <img src="images/icons8-instagram-96.png" alt="Instagram" width="30" height="30" />
 </a>
-
-
-           <a href="https://www.facebook.com/sergianiseaside/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg class="social fb" fill="#ffffff" width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533λ2.366-.001.01-4.256z"
+           <a href="https://www.facebook.com/sergianiseaside/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg class="social fb" fill="#ffffff" width="30px" height="30px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M21.95 5.005l-3.306-.004c-3.206 0-5.277 2.124-5.277 5.415v2.495H10.05v4.515h3.317l-.004 9.575h4.641l.004-9.575h3.806l-.003-4.514h-3.803v-2.117c0-1.018.241-1.533 1.566-1.533l2.366-.001.01-4.256z"
             /></svg></a>
         </div>
       </div>
@@ -299,6 +297,102 @@
       </svg>
     </button>
 
-    <script src="script.js"></script>
+    <script>
+      (function () {
+        if (window.__nav_dd_init) return;
+        window.__nav_dd_init = true;
+
+        // 1) Runtime CSS patch: δείξε το dropdown όταν το <li> έχει .open
+        //    + σωστή τοποθέτηση & στρώματα (χωρίς να πειράξεις styles.css)
+        const st = document.createElement("style");
+        st.textContent = `
+    nav li.has-submenu { position: relative; }
+    nav li.has-submenu > .drop-down { position: absolute; left: 0; top: 100%; z-index: 4000; }
+    nav li.has-submenu.open > .drop-down { display: block !important; }
+  `;
+        document.head.appendChild(st);
+
+        // 2) Αν έχει overlay στο hero, απενεργοποίησε taps που τυχόν “τρώγονται”
+        [".black-layer", ".menu-layer", ".sea-layer"].forEach((sel) => {
+          const el = document.querySelector(sel);
+          if (el) el.style.pointerEvents = "none";
+        });
+
+        // 3) Δέσε triggers για ΟΛΑ τα dropdowns του κύριου nav (EN/GR)
+        const triggers = Array.from(
+          document.querySelectorAll("nav li.has-submenu > a")
+        );
+        if (!triggers.length) {
+          console.warn("[dropdown] no triggers found");
+          return;
+        }
+
+        function bind(a) {
+          const li = a.parentElement;
+          const panel =
+            li.querySelector(":scope > .drop-down") ||
+            li.querySelector(".drop-down");
+          if (!panel) return;
+
+          const open = () => {
+            li.classList.add("open");
+            a.setAttribute("aria-expanded", "true");
+          };
+          const close = () => {
+            li.classList.remove("open");
+            a.setAttribute("aria-expanded", "false");
+          };
+
+          // iOS Safari: κόψε από νωρίς το href="#" ώστε να μη “πηδάει” και να μη χαθεί το tap
+          a.addEventListener(
+            "touchstart",
+            (e) => {
+              e.preventDefault();
+            },
+            { passive: false }
+          );
+
+          // Tap/Click στο MENU/ΜΕΝΟΥ => toggle
+          a.addEventListener(
+            "click",
+            (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              li.classList.contains("open") ? close() : open();
+            },
+            { passive: false }
+          );
+
+          // Click σε link ΜΕΣΑ στο dropdown => κλείσε (και άσε την πλοήγηση να γίνει)
+          panel.addEventListener("click", (e) => {
+            if (e.target.closest("a")) close();
+            e.stopPropagation();
+          });
+
+          // Tap/Click ΕΚΤΟΣ => κλείσε (και touchstart για Safari)
+          const outside = (e) => {
+            if (!li.contains(e.target)) close();
+          };
+          document.addEventListener("touchstart", outside, { passive: true });
+          document.addEventListener("click", outside, { passive: true });
+
+          // Esc / αλλαγές οθόνης => κλείσιμο
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") close();
+          });
+          window.addEventListener("orientationchange", close, {
+            passive: true,
+          });
+          window.addEventListener("resize", close, { passive: true });
+
+          // ARIA hints
+          a.setAttribute("aria-haspopup", "true");
+          a.setAttribute("aria-expanded", "false");
+        }
+
+        triggers.forEach(bind);
+        console.log("[dropdown] bound triggers:", triggers.length);
+      })();
+    </script>
   </body>
 </html>

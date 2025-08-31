@@ -60,9 +60,12 @@
 })();
 
 // dropdown
-// === Dropdown for .has-submenu (works on tap, closes on outside tap) ===
 (function () {
-  // Inject a tiny style so we beat your CSS display:none/hover rules
+  // Μην τρέχει δυο φορές αν το συμπεριλάβεις σε πολλές σελίδες
+  if (window.__dropdownPatched) return;
+  window.__dropdownPatched = true;
+
+  // Κάνε το dropdown ορατό όταν το <li> έχει .open
   if (!document.getElementById("dropdown-open-style")) {
     const style = document.createElement("style");
     style.id = "dropdown-open-style";
@@ -71,73 +74,134 @@
     document.head.appendChild(style);
   }
 
-  function closeAll() {
-    document.querySelectorAll("nav .has-submenu.open").forEach((li) => {
-      li.classList.remove("open");
-      const a = li.querySelector("a");
-      if (a) a.setAttribute("aria-expanded", "false");
-    });
-  }
+  // Αν overlay «τρώει» taps στο Safari
+  const blk = document.querySelector(".black-layer");
+  if (blk) blk.style.pointerEvents = "none";
+  const mly = document.querySelector(".menu-layer");
+  if (mly) mly.style.pointerEvents = "none";
 
-  // Return the top-level trigger <a> if target is that; else null.
-  function getTriggerAnchor(target) {
+  function getTopAnchorFrom(target) {
     const a = target.closest("a");
     if (!a) return null;
     const li = a.closest(".has-submenu");
     if (!li) return null;
-    // ensure it's the direct child anchor of the .has-submenu (not a dropdown link)
-    if (a.parentElement !== li) return null;
+    if (a.parentElement !== li) return null; // αποκλείουμε τα links ΜΕΣΑ στο dropdown
     return a;
   }
+  function getLIFromAnchor(a) {
+    return a ? a.parentElement : null;
+  }
 
-  function toggleFromAnchor(a) {
-    const li = a.parentElement; // since a.parentElement === .has-submenu
+  function closeAll() {
+    document.querySelectorAll("nav .has-submenu.open").forEach((li) => {
+      li.classList.remove("open");
+      const a = li.querySelector(":scope > a") || li.querySelector("a");
+      if (a) a.setAttribute("aria-expanded", "false");
+    });
+  }
+  function toggle(li) {
     const willOpen = !li.classList.contains("open");
     closeAll();
     if (willOpen) {
       li.classList.add("open");
-      a.setAttribute("aria-expanded", "true");
+      const a = li.querySelector(":scope > a") || li.querySelector("a");
+      if (a) a.setAttribute("aria-expanded", "true");
     }
   }
 
-  // Prevent the fake navigation of href="#"
-  document.addEventListener(
-    "pointerdown",
-    function (e) {
-      const a = getTriggerAnchor(e.target);
-      if (a) e.preventDefault();
-    },
-    { passive: false }
-  );
+  // --- Handlers που καλύπτουν Safari ---
+  function onTriggerTouchStart(e) {
+    const a = getTopAnchorFrom(e.target);
+    if (!a) return;
+    // Κόβουμε από ΝΩΡΙΣ την ψευδο-πλοήγηση του href="#"
+    e.preventDefault();
+  }
+  function onTriggerClick(e) {
+    const a = getTopAnchorFrom(e.target);
+    if (!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    toggle(getLIFromAnchor(a));
+  }
 
-  // Toggle on click/tap of the trigger
-  document.addEventListener(
-    "click",
-    function (e) {
-      const a = getTriggerAnchor(e.target);
-      if (a) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleFromAnchor(a);
-        return;
-      }
-      // Click on any dropdown item -> close
-      if (e.target.closest("nav .has-submenu .drop-down a")) {
-        closeAll();
-        return;
-      }
-      // Click outside any submenu -> close
-      if (!e.target.closest("nav .has-submenu")) {
-        closeAll();
-      }
-    },
-    { passive: false }
-  );
+  // Tap/Click σε link ΜΕΣΑ στο dropdown -> κλείσε και άσε την πλοήγηση
+  function onDropdownClick(e) {
+    const link = e.target.closest("nav .has-submenu .drop-down a");
+    if (link) closeAll();
+  }
 
-  // Esc & window changes -> close
-  document.addEventListener("keydown", (e) => {
+  // Tap/Click ΕΚΤΟΣ -> κλείσε (χρησιμοποιούμε ΚΑΙ touchstart ΚΑΙ click για Safari)
+  function onOutsideTouchStart(e) {
+    if (!e.target.closest("nav .has-submenu")) closeAll();
+  }
+  function onOutsideClick(e) {
+    if (!e.target.closest("nav .has-submenu")) closeAll();
+  }
+
+  // Esc / αλλαγές μεγέθους
+  function onKeyDown(e) {
     if (e.key === "Escape") closeAll();
+  }
+  function onResize() {
+    closeAll();
+  }
+
+  // — Δηλώσεις listeners —
+  // Trigger: πιάνουμε ΚΑΙ touchstart (Safari) ΚΑΙ click
+  document.addEventListener("touchstart", onTriggerTouchStart, {
+    passive: false,
+    capture: true,
   });
-  window.addEventListener("orientationchange", closeAll, { passive: true });
-  window.addEventListener("resize", closeAll, { passive: true });
+  document.addEventListener("click", onTriggerClick, {
+    passive: false,
+    capture: true,
+  });
+
+  // Μέσα στο dropdown
+  document.addEventListener("click", onDropdownClick, { capture: true });
+
+  // Έξω από το dropdown: κλείσιμο (και εδώ ΚΑΙ touchstart ΚΑΙ click)
+  document.addEventListener("touchstart", onOutsideTouchStart, {
+    passive: true,
+  });
+  document.addEventListener("click", onOutsideClick, { passive: true });
+
+  // Esc / orientation / resize
+  document.addEventListener("keydown", onKeyDown);
+  window.addEventListener("orientationchange", onResize, { passive: true });
+  window.addEventListener("resize", onResize, { passive: true });
+
+  // ARIA hints (προαιρετικά)
+  document.querySelectorAll("nav .has-submenu").forEach((li) => {
+    const a = li.querySelector(":scope > a") || li.querySelector("a");
+    if (a) {
+      a.setAttribute("aria-haspopup", "true");
+      a.setAttribute("aria-expanded", "false");
+    }
+  });
 })();
+
+//dropdown appear all languages
+document.addEventListener("DOMContentLoaded", () => {
+  const submenu = document.querySelector("li.has-submenu");
+  if (!submenu) return;
+
+  const trigger = submenu.querySelector("a");
+  const dropdown = submenu.querySelector(".drop-down");
+
+  // ασφαλιστικά
+  if (!trigger || !dropdown) return;
+
+  // όταν πατάς το MENU
+  trigger.addEventListener("click", (e) => {
+    e.preventDefault(); // σταματά το # να "πηδάει" τη σελίδα
+    submenu.classList.toggle("open");
+  });
+
+  // κλείσιμο αν πατήσεις έξω
+  document.addEventListener("click", (e) => {
+    if (!submenu.contains(e.target)) {
+      submenu.classList.remove("open");
+    }
+  });
+});

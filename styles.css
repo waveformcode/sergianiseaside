@@ -69,6 +69,10 @@ nav a {
   display: none;
 }
 
+.has-submenu.open > .drop-down {
+  display: block !important;
+}
+
 ul li ul.drop-down li {
   display: block;
 }
@@ -795,11 +799,8 @@ iframe {
   .hero nav ul {
     flex-wrap: nowrap;
     overflow-x: scroll;
-    overflow-y: hidden;
     justify-content: space-between;
   }
-
-  /*==== INTRO MEDIA ====*/
 
   /*==== DISHES MEDIA ====*/
   .dishes,
@@ -903,8 +904,6 @@ iframe {
   .wine2 a {
     order: 5;
   }
-
-  /*==== SEA MOBILE ====*/
 
   /*==== ABOUT MOBILE ====*/
   .our-story,
