@@ -31,9 +31,16 @@
       <nav aria-label="Primary">
         <ul>
           <li><a href="index.html" aria-current="page">HOME</a></li>
-          <li class="has-submenu">
-            <a href="#">MENU &#9660;</a>
-            <ul class="drop-down">
+          <li class="dropdown">
+            <button
+              class="dropbtn"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              MENU ▼
+            </button>
+            <ul class="drop-down-content" role="menu">
               <li><a href="food-menu.html">FOOD</a></li>
               <li><a href="wine-list.html">WINES</a></li>
               <li><a href="drinks.html">DRINKS</a></li>
@@ -41,11 +48,46 @@
           </li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="#footer">CONTACT</a></li>
-          <!--<li class="lang-switch">
+          <li class="lang-switch">
             <a href="index.html">EN</a>
             <a href="index-el.html">GR</a>
-          </li>-->
+          </li>
         </ul>
+      </nav>
+
+      <nav aria-label="Primary">
+        <!-- HAMBURGER BUTTON -->
+        <button
+          class="nav-toggle"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <!-- ΤΟ ΥΠΑΡΧΟΝ ΜΕΝΟΥ ΣΟΥ -->
+        <ul id="primary-menu">
+          <li><a href="index.html" aria-current="page">HOME</a></li>
+
+          <!-- το dropdown σου όπως το έχεις (li.dropdown …) -->
+          <li class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              MENU ▼
+            </button>
+            <ul class="drop-down-content">
+              <li><a href="food-menu.html">FOOD</a></li>
+              <li><a href="wine-list.html">WINES</a></li>
+              <li><a href="drinks.html">DRINKS</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="#footer">CONTACT</a></li>
+        </ul>
+
+        <!-- BACKDROP για να κλείνει όταν πατάς έξω -->
+        <div class="nav-backdrop" hidden></div>
       </nav>
 
       <div class="hero-media">

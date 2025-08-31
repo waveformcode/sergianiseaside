@@ -42,7 +42,6 @@ nav ul {
   padding: 0 12px;
   flex-wrap: nowrap;
   overflow-x: auto;
-
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 }
@@ -64,14 +63,11 @@ nav a {
   flex-wrap: nowrap;
 }
 
-/*==== DROPDOWN ====*/
+/*==== DROPDOWN 
 .drop-down {
   display: none;
 }
 
-.has-submenu.open > .drop-down {
-  display: block !important;
-}
 
 ul li ul.drop-down li {
   display: block;
@@ -107,7 +103,73 @@ ul li ul.drop-down {
 ul li:hover ul.drop-down {
   display: block;
   text-align: center;
+}====*/
+
+/*==== DROPDOWN ====*/
+nav ul {
+  overflow: visible;
+} /* γενικό */
+.dropdown {
+  position: relative;
 }
+
+nav a,
+nav .dropbtn {
+  text-decoration: none;
+  color: white;
+  font-family: "Geist", sans-serif;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
+  font-weight: 600;
+}
+
+.dropbtn {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.drop-down-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 5000;
+  min-width: 150px;
+  background: rgba(246, 242, 236, 0.925);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.drop-down-content li a {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: black;
+}
+
+.drop-down-content li {
+  padding: 10px;
+}
+
+.dropdown:hover > .drop-down-content,
+.dropdown:focus-within > .drop-down-content {
+  display: block;
+}
+
+/*.drop-down-content { 
+  display: none; 
+}
+
+.dropdown.open > .drop-down-content { 
+  display: block; 
+}*/
 
 /*==== HERO ====*/
 .hero {
@@ -797,9 +859,20 @@ iframe {
   }
 
   .hero nav ul {
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    justify-content: space-between;
+    overflow: visible !important;
+  }
+
+  /* Αν έχεις overlay στο hero που “τρώει” taps */
+  .black-layer,
+  .menu-layer,
+  .sea-layer {
+    pointer-events: none;
+  }
+
+  .drop-down-content li a {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: black;
   }
 
   /*==== DISHES MEDIA ====*/

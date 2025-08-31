@@ -25,9 +25,16 @@
       <nav aria-label="Primary">
         <ul>
           <li><a href="index.html" aria-current="page">HOME</a></li>
-          <li class="has-submenu">
-            <a href="#">MENU &#9660;</a>
-            <ul class="drop-down">
+          <li class="dropdown">
+            <button
+              class="dropbtn"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              MENU ▼
+            </button>
+            <ul class="drop-down-content" role="menu">
               <li><a href="food-menu.html">FOOD</a></li>
               <li><a href="wine-list.html">WINES</a></li>
               <li><a href="drinks.html">DRINKS</a></li>
