@@ -60,11 +60,81 @@
   });
 })();
 
-// tap to close
-document.addEventListener("click", (e) => {
-  const dd = e.target.closest(".dropdown");
-  document.querySelectorAll(".dropdown.open").forEach((el) => {
-    if (el !== dd) el.classList.remove("open");
+// ===== MOBILE NAV (hamburger + submenu tap) =====
+(function () {
+  const nav = document.querySelector("nav");
+  const toggleBtn = document.getElementById("menuToggle");
+  const menu = document.getElementById("primaryMenu");
+  if (!nav || !toggleBtn || !menu) return;
+
+  const dropBtns = menu.querySelectorAll(".dropbtn");
+
+  // Άνοιγμα/κλείσιμο κύριου μενού (mobile)
+  function toggleMenu(force) {
+    const willOpen =
+      typeof force === "boolean" ? force : !nav.classList.contains("open");
+    nav.classList.toggle("open", willOpen);
+    document.body.classList.toggle("no-scroll", willOpen);
+    toggleBtn.setAttribute("aria-expanded", String(willOpen));
+  }
+
+  // Burger click
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
   });
-  if (dd) dd.classList.toggle("open");
-});
+
+  // Κλείσιμο όταν πατάς κάποιο link
+  menu.addEventListener("click", (e) => {
+    const t = e.target;
+    if (t.tagName === "A") {
+      toggleMenu(false);
+      // κλείσε και ανοιχτά submenus
+      menu
+        .querySelectorAll(".dropdown.open")
+        .forEach((d) => d.classList.remove("open"));
+      dropBtns.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+    }
+  });
+
+  // Tap έξω για κλείσιμο (και κλείσε submenus)
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target)) {
+      toggleMenu(false);
+      menu
+        .querySelectorAll(".dropdown.open")
+        .forEach((d) => d.classList.remove("open"));
+      dropBtns.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+    }
+  });
+
+  // ESC για κλείσιμο
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      toggleMenu(false);
+      menu
+        .querySelectorAll(".dropdown.open")
+        .forEach((d) => d.classList.remove("open"));
+      dropBtns.forEach((btn) => btn.setAttribute("aria-expanded", "false"));
+      toggleBtn.focus();
+    }
+  });
+
+  // Submenu “MENU” με tap ΜΟΝΟ σε mobile (≤900px)
+  dropBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (window.matchMedia("(max-width: 900px)").matches) {
+        e.preventDefault();
+        e.stopPropagation();
+        const parent = btn.closest(".dropdown");
+        const willOpen = !parent.classList.contains("open");
+        // κλείσε άλλα submenus (optional one-at-a-time)
+        menu.querySelectorAll(".dropdown.open").forEach((d) => {
+          if (d !== parent) d.classList.remove("open");
+        });
+        parent.classList.toggle("open", willOpen);
+        btn.setAttribute("aria-expanded", String(willOpen));
+      }
+    });
+  });
+})();

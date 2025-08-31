@@ -171,6 +171,22 @@ nav .dropbtn {
   display: block; 
 }*/
 
+/* --- HAMBURGER BUTTON (desktop = κρυφό) --- */
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 10px 14px;
+  cursor: pointer;
+  line-height: 1;
+  z-index: 4000;
+}
+
+/* Σιγουρεύουμε ότι δεν κόβεται το dropdown */
+nav ul {
+  overflow: visible;
+}
+
 /*==== HERO ====*/
 .hero {
   display: flex;
@@ -862,17 +878,82 @@ iframe {
     overflow: visible !important;
   }
 
-  /* Αν έχεις overlay στο hero που “τρώει” taps */
-  .black-layer,
-  .menu-layer,
-  .sea-layer {
-    pointer-events: none;
+  .hero nav {
+    background-color: transparent;
+  }
+
+  /*==== hamburger MOBILE ====*/
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  /* κρύψε το menu by default στο mobile */
+  #primaryMenu {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    background: rgba(3, 47, 48, 0.98);
+    backdrop-filter: blur(6px);
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* όταν το nav έχει .open, τότε φαίνεται το menu */
+  nav.open #primaryMenu {
+    display: flex;
+  }
+
+  /* μεγαλύτερα tap targets */
+  #primaryMenu > li {
+    display: block;
+  }
+
+  #primaryMenu a,
+  #primaryMenu .dropbtn {
+    display: block;
+    padding: 12px 10px;
+    font-size: 1.1rem;
+  }
+
+  /* Κάνε το submenu “inline”, όχι flyout */
+  .drop-down-content {
+    position: static;
+    display: none; /* κλειστό by default */
+    background: transparent;
+    border-radius: 0;
+    padding: 0 0 6px 10px;
+    text-align: center;
+  }
+
+  /* απενεργοποίηση hover-open στο mobile */
+  .dropdown:hover > .drop-down-content {
+    display: none;
+  }
+
+  /* άνοιξε submenu όταν ο γονέας έχει .open (θα το βάζει το JS) */
+  .dropdown.open > .drop-down-content {
+    display: block;
   }
 
   .drop-down-content li a {
-    font-size: 1.3rem;
-    font-weight: 800;
-    color: black;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  /* Προαιρετικό: κλείδωμα scroll όταν είναι ανοιχτό το mobile menu */
+  .no-scroll {
+    overflow: hidden;
   }
 
   /*==== DISHES MEDIA ====*/

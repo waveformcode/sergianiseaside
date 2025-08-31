@@ -29,7 +29,28 @@
     <!-- HERO -->
     <header class="hero">
       <nav aria-label="Primary">
-        <ul>
+        <!-- ΝΕΟ: hamburger (το βάζεις πριν από το UL) -->
+        <button
+          class="hamburger"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="primaryMenu"
+          aria-expanded="false"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+        <!-- ΤΡΟΠΟΠΟΙΗΣΗ: δώσε id στο ΥΠΑΡΧΟΝ UL σου -->
+        <ul id="primaryMenu">
+          <!-- Άφησε ΟΛΑ τα υπάρχοντα <li> σου όπως είναι -->
           <li><a href="index.html" aria-current="page">HOME</a></li>
           <li class="dropdown">
             <button
@@ -53,41 +74,6 @@
             <a href="index-el.html">GR</a>
           </li>
         </ul>
-      </nav>
-
-      <nav aria-label="Primary">
-        <!-- HAMBURGER BUTTON -->
-        <button
-          class="nav-toggle"
-          aria-controls="primary-menu"
-          aria-expanded="false"
-          aria-label="Open menu"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <!-- ΤΟ ΥΠΑΡΧΟΝ ΜΕΝΟΥ ΣΟΥ -->
-        <ul id="primary-menu">
-          <li><a href="index.html" aria-current="page">HOME</a></li>
-
-          <!-- το dropdown σου όπως το έχεις (li.dropdown …) -->
-          <li class="dropdown">
-            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-              MENU ▼
-            </button>
-            <ul class="drop-down-content">
-              <li><a href="food-menu.html">FOOD</a></li>
-              <li><a href="wine-list.html">WINES</a></li>
-              <li><a href="drinks.html">DRINKS</a></li>
-            </ul>
-          </li>
-
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="#footer">CONTACT</a></li>
-        </ul>
-
-        <!-- BACKDROP για να κλείνει όταν πατάς έξω -->
-        <div class="nav-backdrop" hidden></div>
       </nav>
 
       <div class="hero-media">

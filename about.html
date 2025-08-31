@@ -20,8 +20,25 @@
   </head>
   <body class="about-body">
     <header>
-      <nav class="about-nav" aria-label="Primary">
-        <ul>
+      <nav aria-label="Primary">
+        <button
+          class="hamburger"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="primaryMenu"
+          aria-expanded="false"
+        >
+          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <ul id="primaryMenu">
           <li><a href="index.html" aria-current="page">HOME</a></li>
           <li class="dropdown">
             <button
@@ -42,11 +59,12 @@
           <li><a href="#footer">CONTACT</a></li>
           <!-- LANGUAGE SWITCH -->
           <li class="lang-switch">
-            <a href="about.html">EN</a>
-            <a href="about-el.html">GR</a>
+            <a href="drinks.html">EN</a>
+            <a href="drinks-el.html">GR</a>
           </li>
         </ul>
       </nav>
+      >
     </header>
 
     <section>
